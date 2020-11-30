@@ -1,5 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
+// https://www.schemecolor.com/tiktok.php
+
 export const theme = createMuiTheme({
   palette: {
     primary: {
@@ -10,7 +12,7 @@ export const theme = createMuiTheme({
     },
     background: {
       default: '#2a2a2a',
-      paper: '#2a2a2a'
+      paper: '#FFFFFF'
     },
     text: {
       primary: '#FFFFFF',
