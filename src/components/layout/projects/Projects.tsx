@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -26,6 +26,9 @@ import stadiumImage from '../../../images/stadium.jpg';
 import starwarsImage from '../../../images/starwars.png';
 import twitterImage from '../../../images/twitter.jpg';
 import awesomeBurgerImage from '../../../images/burger2.png';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,12 +49,20 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
       gap: 20
+    },
+    showTechnologiesContainer: {
+      marginRight: 'auto',
     }
   }),
 );
 
 export const Projects = () => {
   const classes = useStyles();
+  const [showTechnologies, setShowTechnologies] = useState(true);
+
+  const handleChangeShowTechnologies = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setShowTechnologies(event.target.checked);
+  };
 
   return (
     <div className={classes.root}>
@@ -64,29 +75,35 @@ export const Projects = () => {
           Check out my latest projects
       </Typography>
       </Box>
+      <div className={classes.showTechnologiesContainer}>
+        <FormControlLabel
+          control={<Switch checked={showTechnologies} onChange={handleChangeShowTechnologies} name="showTechnologies" />}
+          label="Show Technologies"
+        />
+      </div>
       <div className={classes.projectsContainer}>
-        <Project image={sheltrImage} title="Sheltr" githubRepo="https://github.com/philipstubbs13/tcsw-sheltrus" website="https://tcsw-homeless.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'React', 'Material UI', 'Google Maps', 'Firebase', 'Twilio API', 'Express']} />
-        <Project image={swagImage} title="Running with Swag" githubRepo="https://github.com/philipstubbs13/running-with-swag" website="https://running-with-swag.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'React', 'PrimeReact', 'Node', 'Firebase', 'Tumblr API', 'CSS Grid']} />
-        <Project image={pizzaImage} title="MyCookingAssistant" githubRepo="https://github.com/philipstubbs13/Project-Longshot" website="https://longshotauth.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Materialize', 'jQuery', 'Firebase', 'Edamam Recipe Search API']} />
-        <Project image={burgerImage} title="Sequelized Burger" githubRepo="https://github.com/philipstubbs13/sequelizedBurger" website="https://hidden-shelf-25357.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Handlebars', 'Node', 'MySQL', 'Express', 'ORM']} />
-        <Project image={awesomeBurgerImage} title="Awesome Burger" githubRepo="https://github.com/philipstubbs13/burger" website="https://gentle-caverns-56054.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Handlebars', 'Node', 'MySQL', 'Express', 'ORM']} />
-        <Project image={adoptMeImage} title="AdoptMeNow" githubRepo="https://github.com/philipstubbs13/PetMatch" website="https://pet-match-app.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Semantic UI', 'jQuery', 'Handlebars', 'Node', 'MySQL', 'Express', 'Sequelize ORM', 'Facebook auth']} />
-        <Project image={eduVentsImage} title="EduVents" githubRepo="https://github.com/melinda-schmitz/CodeSwitch2018" website="https://learner-47455.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'React', 'Firebase', 'Material UI', 'react-big-calendar']} />
-        <Project image={artImage} title="ArtOwl" githubRepo="https://github.com/philipstubbs13/" website="http://artowl.co/" technologies={['HTML', 'CSS', 'JavaScript', 'Material UI', 'AWS Amplify', 'google-map-react', 'React', 'react-chartkick']} />
-        <Project image={clickmeImage} title="ClickMe" githubRepo="https://github.com/philipstubbs13/ClickMe" website="https://clickme-d27eb.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React']} />
-        <Project image={giffinderImage} title="Athlete hall of gifs" githubRepo="https://github.com/philipstubbs13/Giphy-API-Project" website="https://philipstubbs13.github.io/Giphy-API-Project/index.html" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'AJAX', 'GIPHY API']} />
-        <Project image={hangmanImage} title="Hangman" githubRepo="https://github.com/philipstubbs13/Hangman-Game" website="https://philipstubbs13.github.io/Giphy-API-Project/index.html" technologies={['HTML', 'CSs', 'JavaScript', 'Bootstrap', 'jQuery']} />
-        <Project image={carpoolImage} title="Carpool Buddy" githubRepo="https://github.com/philipstubbs13/FriendFinder" website="https://blooming-lowlands-71441.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node', 'Express']} />
-        <Project image={bamazonImage} title="Bamazon" githubRepo="https://github.com/philipstubbs13/Bamazon" technologies={['Node', 'JavaScript', 'MySQL']} />
-        <Project image={crystalImage} title="Crystal Collectors" githubRepo="https://github.com/philipstubbs13/week-4-game" website="https://philipstubbs13.github.io/week-4-game/index.html" technologies={['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']} />
-        <Project image={twitterImage} title="LIRI" githubRepo="https://github.com/philipstubbs13/liri-node-app" technologies={['Node']} />
-        <Project image={scraperImage} title="BasketballScraper" githubRepo="https://github.com/philipstubbs13/NewsScrape" website="https://hoops-scraper.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Handlebars', 'Node', 'MongoDB', 'Express', 'Mongoose ORM']} />
-        <Project image={healthTrackerImage} title="HealthTracker" githubRepo="https://github.com/philipstubbs13/MedLog" website="https://myhealthtracker.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Material UI', 'React', 'FusionCharts', 'Node', 'MongoDB', 'Express', 'Mongoose ORM', 'AWS S3']} />
-        <Project image={myTrainBuilderImage} title="myTrainBuilder" githubRepo="https://github.com/philipstubbs13/Firebase-Train-Scheduler" website="https://fir-train-scheduler-7f4a9.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Firebase', 'Moment']} />
-        <Project image={newsImage} title="NYT React Search" githubRepo="https://github.com/philipstubbs13/NYT-React-Search" website="https://react-nytimes-search.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'reactstrap', 'React', 'Node', 'MongoDB', 'Express', 'Mongoose ORM', 'New York Times Article Search API']} />
-        <Project image={skylineImage} title="Constructor Hangman" githubRepo="https://github.com/philipstubbs13/constructor-hangman" technologies={['Node', 'JavaScript constructors']} />
-        <Project image={stadiumImage} title="Trivia Game" githubRepo="https://github.com/philipstubbs13/TriviaGame" website="https://philipstubbs13.github.io/TriviaGame/index.html" technologies={['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']} />
-        <Project image={starwarsImage} title="Star Wars RPG Game" githubRepo="https://github.com/philipstubbs13/Star-Wars-RPG-Game" website="https://philipstubbs13.github.io/Star-Wars-RPG-Game/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery']} />
+        <Project image={sheltrImage} title="Sheltr" githubRepo="https://github.com/philipstubbs13/tcsw-sheltrus" website="https://tcsw-homeless.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'React', 'Material UI', 'Google Maps', 'Firebase', 'Twilio API', 'Express']} showTechnologies={showTechnologies} />
+        <Project image={swagImage} title="Running with Swag" githubRepo="https://github.com/philipstubbs13/running-with-swag" website="https://running-with-swag.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'React', 'PrimeReact', 'Node', 'Firebase', 'Tumblr API', 'CSS Grid']} showTechnologies={showTechnologies} />
+        <Project image={pizzaImage} title="MyCookingAssistant" githubRepo="https://github.com/philipstubbs13/Project-Longshot" website="https://longshotauth.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Materialize', 'jQuery', 'Firebase', 'Edamam Recipe Search API']} showTechnologies={showTechnologies} />
+        <Project image={burgerImage} title="Sequelized Burger" githubRepo="https://github.com/philipstubbs13/sequelizedBurger" website="https://hidden-shelf-25357.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Handlebars', 'Node', 'MySQL', 'Express', 'ORM']} showTechnologies={showTechnologies} />
+        <Project image={awesomeBurgerImage} title="Awesome Burger" githubRepo="https://github.com/philipstubbs13/burger" website="https://gentle-caverns-56054.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Handlebars', 'Node', 'MySQL', 'Express', 'ORM']} showTechnologies={showTechnologies} />
+        <Project image={adoptMeImage} title="AdoptMeNow" githubRepo="https://github.com/philipstubbs13/PetMatch" website="https://pet-match-app.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Semantic UI', 'jQuery', 'Handlebars', 'Node', 'MySQL', 'Express', 'Sequelize ORM', 'Facebook auth']} showTechnologies={showTechnologies} />
+        <Project image={eduVentsImage} title="EduVents" githubRepo="https://github.com/melinda-schmitz/CodeSwitch2018" website="https://learner-47455.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'React', 'Firebase', 'Material UI', 'react-big-calendar']} showTechnologies={showTechnologies} />
+        <Project image={artImage} title="ArtOwl" githubRepo="https://github.com/philipstubbs13/" website="http://artowl.co/" technologies={['HTML', 'CSS', 'JavaScript', 'Material UI', 'AWS Amplify', 'google-map-react', 'React', 'react-chartkick']} showTechnologies={showTechnologies} />
+        <Project image={clickmeImage} title="ClickMe" githubRepo="https://github.com/philipstubbs13/ClickMe" website="https://clickme-d27eb.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React']} showTechnologies={showTechnologies}/>
+        <Project image={giffinderImage} title="Athlete hall of gifs" githubRepo="https://github.com/philipstubbs13/Giphy-API-Project" website="https://philipstubbs13.github.io/Giphy-API-Project/index.html" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'AJAX', 'GIPHY API']} showTechnologies={showTechnologies} />
+        <Project image={hangmanImage} title="Hangman" githubRepo="https://github.com/philipstubbs13/Hangman-Game" website="https://philipstubbs13.github.io/Giphy-API-Project/index.html" technologies={['HTML', 'CSs', 'JavaScript', 'Bootstrap', 'jQuery']} showTechnologies={showTechnologies} />
+        <Project image={carpoolImage} title="Carpool Buddy" githubRepo="https://github.com/philipstubbs13/FriendFinder" website="https://blooming-lowlands-71441.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node', 'Express']} showTechnologies={showTechnologies} />
+        <Project image={bamazonImage} title="Bamazon" githubRepo="https://github.com/philipstubbs13/Bamazon" technologies={['Node', 'JavaScript', 'MySQL']} showTechnologies={showTechnologies} />
+        <Project image={crystalImage} title="Crystal Collectors" githubRepo="https://github.com/philipstubbs13/week-4-game" website="https://philipstubbs13.github.io/week-4-game/index.html" technologies={['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']} showTechnologies={showTechnologies} />
+        <Project image={twitterImage} title="LIRI" githubRepo="https://github.com/philipstubbs13/liri-node-app" technologies={['Node']} showTechnologies={showTechnologies} />
+        <Project image={scraperImage} title="BasketballScraper" githubRepo="https://github.com/philipstubbs13/NewsScrape" website="https://hoops-scraper.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Handlebars', 'Node', 'MongoDB', 'Express', 'Mongoose ORM']} showTechnologies={showTechnologies} />
+        <Project image={healthTrackerImage} title="HealthTracker" githubRepo="https://github.com/philipstubbs13/MedLog" website="https://myhealthtracker.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Material UI', 'React', 'FusionCharts', 'Node', 'MongoDB', 'Express', 'Mongoose ORM', 'AWS S3']}showTechnologies={showTechnologies} />
+        <Project image={myTrainBuilderImage} title="myTrainBuilder" githubRepo="https://github.com/philipstubbs13/Firebase-Train-Scheduler" website="https://fir-train-scheduler-7f4a9.firebaseapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Firebase', 'Moment']} showTechnologies={showTechnologies} />
+        <Project image={newsImage} title="NYT React Search" githubRepo="https://github.com/philipstubbs13/NYT-React-Search" website="https://react-nytimes-search.herokuapp.com/" technologies={['HTML', 'CSS', 'JavaScript', 'reactstrap', 'React', 'Node', 'MongoDB', 'Express', 'Mongoose ORM', 'New York Times Article Search API']} showTechnologies={showTechnologies} />
+        <Project image={skylineImage} title="Constructor Hangman" githubRepo="https://github.com/philipstubbs13/constructor-hangman" technologies={['Node', 'JavaScript constructors']} showTechnologies={showTechnologies} />
+        <Project image={stadiumImage} title="Trivia Game" githubRepo="https://github.com/philipstubbs13/TriviaGame" website="https://philipstubbs13.github.io/TriviaGame/index.html" technologies={['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']} showTechnologies={showTechnologies} />
+        <Project image={starwarsImage} title="Star Wars RPG Game" githubRepo="https://github.com/philipstubbs13/Star-Wars-RPG-Game" website="https://philipstubbs13.github.io/Star-Wars-RPG-Game/" technologies={['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery']} showTechnologies={showTechnologies} />
       </div>
     </div>
   )

@@ -58,6 +58,7 @@ interface IProps {
   githubRepo: string;
   website?: string;
   technologies?: string[];
+  showTechnologies: boolean;
 }
 
 export const Project = (props: IProps) => {
@@ -89,18 +90,8 @@ export const Project = (props: IProps) => {
                 <i className="fas fa-2x fa-globe"></i>
               </IconButton>
             )}
-            <IconButton
-              className={clsx(classes.expand, {
-                [classes.expandOpen]: expanded,
-              })}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </IconButton>
           </div>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <Collapse in={props.showTechnologies} timeout="auto" unmountOnExit>
             {props.technologies && props.technologies.map(technology => <Chip className={classes.chip} color="secondary" label={technology} />)}
           </Collapse>
         </CardContent>
@@ -112,6 +103,7 @@ export const Project = (props: IProps) => {
 Project.propTypes = {
   website: PropTypes.string,
   technologies: PropTypes.array,
+  showTechnologies: PropTypes.bool,
 };
 
 Project.defaultProps = {
