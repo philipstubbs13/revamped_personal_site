@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -9,6 +9,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
+import Collapse from '@material-ui/core/Collapse';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,6 +35,19 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: 5,
       marginTop: 5
     },
+    links: {
+      marginBottom: 20,
+    },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
   }),
 );
 
@@ -45,7 +61,12 @@ interface IProps {
 }
 
 export const Project = (props: IProps) => {
+  const [expanded, setExpanded] = useState(false);
   const classes = useStyles();
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <Card className={classes.root}>
@@ -59,19 +80,31 @@ export const Project = (props: IProps) => {
           <Typography gutterBottom variant="h5" component="h2" color="textSecondary">
             {props.title}
           </Typography>
-          {props.technologies && props.technologies.map(technology => <Chip className={classes.chip} color="secondary" label={technology} />)}
+          <div className={classes.links}>
+            <IconButton size="small" color="primary" className={classes.socialButton} href={props.githubRepo} target="_blank">
+              <i className="fab fa-2x fa-github"></i>
+            </IconButton>
+            {props.website && (
+              <IconButton size="small" color="primary" className={classes.socialButton} href={props.website} target="_blank">
+                <i className="fas fa-2x fa-globe"></i>
+              </IconButton>
+            )}
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+          </div>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            {props.technologies && props.technologies.map(technology => <Chip className={classes.chip} color="secondary" label={technology} />)}
+          </Collapse>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <IconButton size="small" color="primary" className={classes.socialButton} href={props.githubRepo} target="_blank">
-          <i className="fab fa-2x fa-github"></i>
-        </IconButton>
-        {props.website && (
-          <IconButton size="small" color="primary" className={classes.socialButton} href={props.website} target="_blank">
-            <i className="fas fa-2x fa-globe"></i>
-          </IconButton>
-        )}
-      </CardActions>
     </Card>
   );
 }
