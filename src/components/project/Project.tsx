@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,7 +26,12 @@ const useStyles = makeStyles((theme: Theme) =>
       '&:hover': {
         color: theme.palette.secondary.main,
       }
-    }
+    },
+    chip: {
+      color: theme.palette.text.primary,
+      marginRight: 5,
+      marginTop: 5
+    },
   }),
 );
 
@@ -35,6 +41,7 @@ interface IProps {
   title: string;
   githubRepo: string;
   website?: string;
+  technologies?: string[];
 }
 
 export const Project = (props: IProps) => {
@@ -52,6 +59,7 @@ export const Project = (props: IProps) => {
           <Typography gutterBottom variant="h5" component="h2" color="textSecondary">
             {props.title}
           </Typography>
+          {props.technologies && props.technologies.map(technology => <Chip className={classes.chip} color="secondary" label={technology} />)}
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -69,9 +77,11 @@ export const Project = (props: IProps) => {
 }
 
 Project.propTypes = {
-  website: PropTypes.string
+  website: PropTypes.string,
+  technologies: PropTypes.array,
 };
 
 Project.defaultProps = {
   website: '',
+  technologies: [],
 }

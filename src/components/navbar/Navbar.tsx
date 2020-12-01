@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      borderBottom: `4px solid ${theme.palette.secondary.main}`
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
       textDecoration: 'none',
-       color: theme.palette.text.primary,
+      color: theme.palette.text.primary,
       '&:hover': {
         color: theme.palette.secondary.main,
       }
