@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme: Theme) =>
       border: `1px solid ${theme.palette.primary.main}`,
       '&:hover': {
         color: theme.palette.text.primary,
-        border: `1px solid ${theme.palette.text.primary}`,
       }
     },
   }),

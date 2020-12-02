@@ -1,13 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { FormStepper } from '../../form-stepper/FormStepper';
-import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       display: 'flex',
