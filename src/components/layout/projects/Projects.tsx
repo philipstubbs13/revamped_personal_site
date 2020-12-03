@@ -61,9 +61,10 @@ export const Projects = () => {
         />
       </div>
       <div className={classes.projectsContainer}>
-        {projects.map((project: IProject) => {
+        {projects.map((project: IProject, index) => {
           return (
             <Project
+              key={`${project.title}-${index}`}
               image={project.image}
               title={project.title}
               githubRepo={project.githubRepo}

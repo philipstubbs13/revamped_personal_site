@@ -6,6 +6,7 @@ import walmart from '../images/walmart.jpg';
 import parallax from '../images/parallax.jpg';
 
 export interface Experience {
+  key?: string,
   title: string,
   description: string,
   start: string,

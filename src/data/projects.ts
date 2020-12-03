@@ -20,8 +20,13 @@ import stadiumImage from '../images/stadium.jpg';
 import starwarsImage from '../images/starwars.png';
 import twitterImage from '../images/twitter.jpg';
 import awesomeBurgerImage from '../images/burger2.png';
+import australiaFiresImage from '../images/australia_fires.png';
+import youtubeImage from '../images/youtube.png';
+import mentalHealthImage from '../images/mental_health.png';
+import d3DataJournalismImage from '../images/d3_data_journalism.png';
 
 export interface IProject {
+  key?: string,
   image: string,
   title: string,
   githubRepo: string,
@@ -30,6 +35,34 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
+  {
+    image: mentalHealthImage,
+    title: 'Mental Health and ML',
+    githubRepo: 'https://github.com/abbylemon/mental_health_ML',
+    website: 'https://mental-health-in-tech.herokuapp.com/',
+    technologies: ['AWS S3', 'AWS RDS', 'Postgres', 'Python', 'Google Colab', 'Pandas', 'PySpark', 'Flask', 'Swagger', 'HTML', 'CSS', 'TextBlob', 'VADER'],
+  },
+  {
+    image: australiaFiresImage,
+    title: 'Australia Fire Dashboard',
+    githubRepo: 'https://github.com/philipstubbs13/australia-fire-api-and-dashboard',
+    website: 'https://australia-fire-api-dashboard.herokuapp.com/',
+    technologies: ['Flask', 'MongoDB Atlas', 'Jupyter Notebook', 'Python', 'Pandas', 'Beautiful Soup', 'D3', 'd3-timeseries', 'Leaflet'],
+  },
+  {
+    image: youtubeImage,
+    title: 'YouTube Data Analysis',
+    githubRepo: 'https://github.com/philipstubbs13/team_hopper',
+    website: 'https://philipstubbs13.github.io/Web-Design-Challenge/#/youtube-insights',
+    technologies: ['YouTube API', 'Jupyter Notebook', 'Python', 'Pandas', 'Matplotlib'],
+  },
+  {
+    image: d3DataJournalismImage,
+    title: 'D3 Data Journalism',
+    githubRepo: 'https://github.com/philipstubbs13/D3-challenge',
+    website: 'https://d3-data-journalism-9cb59.web.app/',
+    technologies: ['D3', 'JavaScript', 'Firebase'],
+  },
   {
     image: sheltrImage,
     title: 'Shelter',
