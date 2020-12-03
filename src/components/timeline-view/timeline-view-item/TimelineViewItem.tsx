@@ -38,7 +38,7 @@ export const TimelineViewItem = (props: IProps) => {
   return (
     <TimelineItem>
       <TimelineOppositeContent>
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2">
           {props.timelineItem.start} - {props.timelineItem.end ? props.timelineItem.end : 'Present'}
         </Typography>
       </TimelineOppositeContent>
@@ -50,11 +50,11 @@ export const TimelineViewItem = (props: IProps) => {
       </TimelineSeparator>
       <TimelineContent>
         <Paper elevation={3} className={classes.paper}>
-          <Typography variant="subtitle1" color="textSecondary" className={classes.bold}>
+          <Typography variant="subtitle1"className={classes.bold}>
             {props.timelineItem.title}
           </Typography>
           {props.timelineItem.description && (
-            <Typography variant="body2" color="textSecondary" className={classes.muted}>{props.timelineItem.description}</Typography>
+            <Typography variant="body2" className={classes.muted}>{props.timelineItem.description}</Typography>
           )}
         </Paper>
       </TimelineContent>

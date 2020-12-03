@@ -24,6 +24,7 @@ import australiaFiresImage from '../images/australia_fires.png';
 import youtubeImage from '../images/youtube.png';
 import mentalHealthImage from '../images/mental_health.png';
 import d3DataJournalismImage from '../images/d3_data_journalism.png';
+import tableauImage from '../images/tableau.png';
 
 export interface IProject {
   key?: string,
@@ -62,6 +63,13 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/D3-challenge',
     website: 'https://d3-data-journalism-9cb59.web.app/',
     technologies: ['D3', 'JavaScript', 'Firebase'],
+  },
+  {
+    image: tableauImage,
+    title: 'Citi Bike Dashboard',
+    githubRepo: 'https://github.com/philipstubbs13/tableau-challenge',
+    website: 'https://public.tableau.com/profile/phil.stubbs#!/vizhome/CitiBikeAnalytics_15879541754520/NewYorkCitiBikeAnalyticsandInsights',
+    technologies: ['Tableau'],
   },
   {
     image: sheltrImage,

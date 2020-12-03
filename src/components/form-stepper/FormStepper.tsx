@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -11,11 +11,13 @@ import Person from '@material-ui/icons/Person';
 import Email from '@material-ui/icons/Email';
 import Create from '@material-ui/icons/Create';
 import { theme } from '../../theme/theme';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
+      color: theme.palette.text.secondary,
     },
     button: {
       marginRight: theme.spacing(1),
@@ -23,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     instructions: {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(3),
-      color: theme.palette.primary.main,
+      color: theme.palette.text.primary,
     },
     stepLabel: {
       color: `${theme.palette.primary.main} !important`,
@@ -39,48 +41,54 @@ function getStepContent(step: number) {
   switch (step) {
     case 0:
       return (
-        <TextField
-          id="name-input"
-          label="Fill in with your name"
-          fullWidth
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
-                <Person />
-              </InputAdornment>
-            )
-          }}
-        />
+        <Fragment>
+          <InputLabel style={{ color: theme.palette.primary.main, fontSize: 12 }}>Fill in with your name</InputLabel>
+          <TextField
+            id="name-input"
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
+                  <Person />
+                </InputAdornment>
+              )
+            }}
+          />
+        </Fragment>
       )
     case 1:
       return (
-        <TextField
-          id="email-input"
-          label="Now your email address"
-          fullWidth
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
-                <Email />
-              </InputAdornment>
-            )
-          }}
-        />
+        <Fragment>
+          <InputLabel style={{ color: theme.palette.primary.main, fontSize: 12 }}>Now your email address</InputLabel>
+          <TextField
+            id="email-input"
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
+                  <Email />
+                </InputAdornment>
+              )
+            }}
+          />
+        </Fragment>
       )
     case 2:
       return (
-        <TextField
-          id="message-input"
-          label="Now write your awesome message :)"
-          fullWidth
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
-                <Create />
-              </InputAdornment>
-            )
-          }}
-        />
+        <Fragment>
+          <InputLabel style={{ color: theme.palette.primary.main, fontSize: 12 }}>Now write your awesome message :)</InputLabel>
+          <TextField
+            id="message-input"
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
+                  <Create />
+                </InputAdornment>
+              )
+            }}
+          />
+        </Fragment>
       )
     default:
       return 'Unknown step';

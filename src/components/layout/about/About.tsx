@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
       fontWeight: 'bold',
+      textAlign: 'center',
     },
     body: {
       lineHeight: 1.5,
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.secondary.main,
       textDecoration: 'none',
       '&:hover': {
-        color: theme.palette.text.secondary,
+        color: theme.palette.text.primary,
       }
     },
     avatar: {
@@ -32,11 +33,11 @@ const useStyles = makeStyles((theme: Theme) =>
     bio: {
       backgroundColor: theme.palette.secondary.dark,
       border: `3px solid ${theme.palette.secondary.main}`,
-      color: theme.palette.text.primary,
+      color: theme.palette.text.secondary,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-    }
+    },
   }),
 );
 
@@ -44,7 +45,7 @@ export const About = () => {
   const classes = useStyles();
 
   return (
-    <Fragment>
+    <div>
       <Box p={5} className={classes.bio}>
         <Avatar alt="Phil Stubbs" src={profileImage} className={classes.avatar} />
         <Typography variant="h4" className={classes.title}>Hello, my name is Phil Stubbs.</Typography>
@@ -63,6 +64,6 @@ export const About = () => {
       <Box textAlign="center">
         <TimelineView timelineItems={experiences} />
       </Box>
-    </Fragment>
+    </div>
   )
 };

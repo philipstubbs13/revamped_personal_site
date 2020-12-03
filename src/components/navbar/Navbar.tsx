@@ -1,5 +1,5 @@
-import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import React, { useState } from 'react';
+import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -7,6 +7,13 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import { navlinks } from '../../data/navlinks';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
       textDecoration: 'none',
-      color: theme.palette.text.primary,
+      color: theme.palette.text.secondary,
       '&:hover': {
         color: theme.palette.secondary.main,
       }
@@ -29,22 +36,82 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 20,
       border: `1px solid ${theme.palette.primary.main}`,
       '&:hover': {
-        color: theme.palette.text.primary,
-      }
+        color: theme.palette.text.secondary,
+      },
+      [theme.breakpoints.down('sm')]: {
+        display: 'none',
+      },
+    },
+    list: {
+      marginTop: 50,
+      width: 250,
+    },
+    drawerLink: {
+      textDecoration: 'none',
+      color: theme.palette.text.primary,
+    },
+    listItem: {
+      marginTop: 10
     },
   }),
 );
 
 export const Navbar = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (open: boolean) => (
+    event: React.KeyboardEvent | React.MouseEvent,
+  ) => {
+    if (
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return;
+    }
+
+    setOpen(open);
+  };
+
+  const list = () => (
+    <div
+      className={classes.list}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {navlinks.map((link, index) => (
+          <Link to={link.route} key={link.route} className={classes.drawerLink}>
+            <ListItem button className={classes.listItem}>
+              <ListItemIcon><i className={`fas fa-${link.icon}`}></i></ListItemIcon>
+              <ListItemText primary={link.title} />
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+    </div >
+  );
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <CssBaseline />
+      <AppBar
+        position="static"
+      >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+          >
             <MenuIcon />
           </IconButton>
+          <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
+            {list()}
+          </Drawer>
           <Link to="/" className={classes.title}>
             <Typography variant="h6">
               Phil J Stubbs

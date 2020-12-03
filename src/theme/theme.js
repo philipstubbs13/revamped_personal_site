@@ -12,12 +12,12 @@ export const theme = createMuiTheme({
       dark: '#EE1D52'
     },
     background: {
-      default: '#2a2a2a',
+      default: '#FFFFFF',
       paper: '#FFFFFF'
     },
     text: {
-      primary: '#FFFFFF',
-      secondary: '#010101'
+      primary: '#010101',
+      secondary: '#FFFFFF'
     },
   }
 })

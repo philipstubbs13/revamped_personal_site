@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     chip: {
-      color: theme.palette.text.primary,
+      color: theme.palette.text.secondary,
       marginRight: 5,
       marginTop: 5
     },
@@ -78,7 +78,7 @@ export const Project = (props: IProps) => {
           title={props.title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" color="textSecondary">
+          <Typography gutterBottom variant="h5" component="h2">
             {props.title}
           </Typography>
           <div className={classes.links}>
