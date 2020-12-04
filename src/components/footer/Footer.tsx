@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.secondary.main,
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     copyrightText: {
       marginTop: 20,
       marginBottom: 20,
-    }
-  }),
+    },
+  })
 );
 
 export const Footer = () => {
@@ -28,7 +28,9 @@ export const Footer = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h6" className={classes.copyrightText}>Phil J Stubbs &copy; 2020</Typography>
+      <Typography variant="h6" className={classes.copyrightText}>
+        Phil J Stubbs &copy; 2020
+      </Typography>
     </div>
   );
-}
+};

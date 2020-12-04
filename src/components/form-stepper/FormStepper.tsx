@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -10,8 +10,8 @@ import TextField from '@material-ui/core/TextField';
 import Person from '@material-ui/icons/Person';
 import Email from '@material-ui/icons/Email';
 import Create from '@material-ui/icons/Create';
-import { theme } from '../../theme/theme';
 import InputLabel from '@material-ui/core/InputLabel';
+import { theme as appTheme } from '../../theme/theme';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
     stepLabel: {
       color: `${theme.palette.primary.main} !important`,
     },
-  }),
+  })
 );
 
 function getSteps() {
@@ -41,55 +41,61 @@ function getStepContent(step: number) {
   switch (step) {
     case 0:
       return (
-        <Fragment>
-          <InputLabel style={{ color: theme.palette.primary.main, fontSize: 12 }}>Fill in with your name</InputLabel>
+        <>
+          <InputLabel style={{ color: appTheme.palette.primary.main, fontSize: 12 }}>
+            Fill in with your name
+          </InputLabel>
           <TextField
             id="name-input"
             fullWidth
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
+                <InputAdornment position="start" style={{ color: appTheme.palette.primary.main }}>
                   <Person />
                 </InputAdornment>
-              )
+              ),
             }}
           />
-        </Fragment>
-      )
+        </>
+      );
     case 1:
       return (
-        <Fragment>
-          <InputLabel style={{ color: theme.palette.primary.main, fontSize: 12 }}>Now your email address</InputLabel>
+        <>
+          <InputLabel style={{ color: appTheme.palette.primary.main, fontSize: 12 }}>
+            Now your email address
+          </InputLabel>
           <TextField
             id="email-input"
             fullWidth
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
+                <InputAdornment position="start" style={{ color: appTheme.palette.primary.main }}>
                   <Email />
                 </InputAdornment>
-              )
+              ),
             }}
           />
-        </Fragment>
-      )
+        </>
+      );
     case 2:
       return (
-        <Fragment>
-          <InputLabel style={{ color: theme.palette.primary.main, fontSize: 12 }}>Now write your awesome message :)</InputLabel>
+        <>
+          <InputLabel style={{ color: appTheme.palette.primary.main, fontSize: 12 }}>
+            Now write your awesome message :)
+          </InputLabel>
           <TextField
             id="message-input"
             fullWidth
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start" style={{ color: theme.palette.primary.main }}>
+                <InputAdornment position="start" style={{ color: appTheme.palette.primary.main }}>
                   <Create />
                 </InputAdornment>
-              )
+              ),
             }}
           />
-        </Fragment>
-      )
+        </>
+      );
     default:
       return 'Unknown step';
   }
@@ -138,8 +144,9 @@ export const FormStepper = () => {
               <StepLabel
                 {...labelProps}
                 classes={{
-                  label: classes.stepLabel
-                }}>
+                  label: classes.stepLabel,
+                }}
+              >
                 {label}
               </StepLabel>
             </Step>
@@ -150,33 +157,43 @@ export const FormStepper = () => {
         {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>
-              All steps completed - thank you for your message. <br /> I'll get back to you as soon as I can.
+              All steps completed - thank you for your message. <br /> I&apos;ll get back to you as
+              soon as I can.
             </Typography>
-            <Button onClick={handleReset} className={classes.button} color="secondary" variant="contained">
+            <Button
+              onClick={handleReset}
+              className={classes.button}
+              color="secondary"
+              variant="contained"
+            >
               Reset
             </Button>
           </div>
         ) : (
+          <div>
+            <div className={classes.instructions}>{getStepContent(activeStep)}</div>
             <div>
-              <div className={classes.instructions}>
-                {getStepContent(activeStep)}
-              </div>
-              <div>
-                <Button disabled={activeStep === 0} onClick={handleBack} variant="contained" color="secondary" className={classes.button}>
-                  Back
+              <Button
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+              >
+                Back
               </Button>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleNext}
-                  className={classes.button}
-                >
-                  {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-              </div>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleNext}
+                className={classes.button}
+              >
+                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+              </Button>
             </div>
-          )}
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};

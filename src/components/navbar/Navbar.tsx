@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      borderBottom: `4px solid ${theme.palette.secondary.main}`
+      borderBottom: `4px solid ${theme.palette.secondary.main}`,
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.text.secondary,
       '&:hover': {
         color: theme.palette.secondary.main,
-      }
+      },
     },
     navLink: {
       marginLeft: 20,
@@ -51,18 +51,16 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.text.primary,
     },
     listItem: {
-      marginTop: 10
+      marginTop: 10,
     },
-  }),
+  })
 );
 
 export const Navbar = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const toggleDrawer = (open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent,
-  ) => {
+  const toggleDrawer = (openDrawer: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
       event.type === 'keydown' &&
       ((event as React.KeyboardEvent).key === 'Tab' ||
@@ -71,7 +69,7 @@ export const Navbar = () => {
       return;
     }
 
-    setOpen(open);
+    setOpen(openDrawer);
   };
 
   const list = () => (
@@ -82,45 +80,43 @@ export const Navbar = () => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {navlinks.map((link, index) => (
+        {navlinks.map((link) => (
           <Link to={link.route} key={link.route} className={classes.drawerLink}>
             <ListItem button className={classes.listItem}>
-              <ListItemIcon><i className={`fas fa-${link.icon}`}></i></ListItemIcon>
+              <ListItemIcon>
+                <i className={`fas fa-${link.icon}`} />
+              </ListItemIcon>
               <ListItemText primary={link.title} />
             </ListItem>
           </Link>
         ))}
       </List>
-    </div >
+    </div>
   );
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
-        position="static"
-      >
+      <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-          >
+          <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
           <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
             {list()}
           </Drawer>
           <Link to="/" className={classes.title}>
-            <Typography variant="h6">
-              Phil J Stubbs
-            </Typography>
+            <Typography variant="h6">Phil J Stubbs</Typography>
           </Link>
           <Button className={classes.navLink} variant="contained" color="secondary" href="/">
             About
           </Button>
-          <Button className={classes.navLink} variant="contained" color="secondary" href="/projects">
+          <Button
+            className={classes.navLink}
+            variant="contained"
+            color="secondary"
+            href="/projects"
+          >
             Projects
           </Button>
           <Button className={classes.navLink} variant="contained" color="secondary" href="/contact">
@@ -130,4 +126,4 @@ export const Navbar = () => {
       </AppBar>
     </div>
   );
-}
+};

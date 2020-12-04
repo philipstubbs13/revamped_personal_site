@@ -1,16 +1,15 @@
-import { Fragment } from 'react';
+import React from 'react';
 import './App.css';
-import { Navbar } from './components/navbar/Navbar';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { theme } from './theme/theme';
+import { ThemeProvider, createStyles, makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Routes } from './components/routing/Routes';
 import Container from '@material-ui/core/Container';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import { theme } from './theme/theme';
+import { Routes } from './components/routing/Routes';
+import { Navbar } from './components/navbar/Navbar';
 import { Footer } from './components/footer/Footer';
 import { SocialLinks } from './components/social-links/SocialLinks';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       marginTop: 0,
@@ -30,12 +29,12 @@ const useStyles = makeStyles((theme: Theme) =>
         marginTop: '1.5em',
         height: 0,
         visibility: 'hidden',
-      }
-    }
-  }),
+      },
+    },
+  })
 );
 
-function App() {
+export const App = () => {
   const classes = useStyles();
 
   return (
@@ -52,8 +51,6 @@ function App() {
           <Footer />
         </div>
       </Router>
-    </ThemeProvider >
+    </ThemeProvider>
   );
-}
-
-export default App;
+};

@@ -25,20 +25,20 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
       [theme.breakpoints.down('md')]: {
-        gridTemplateColumns: 'repeat(2, 1fr)'
+        gridTemplateColumns: 'repeat(2, 1fr)',
       },
       [theme.breakpoints.down('sm')]: {
-        gridTemplateColumns: '1fr'
+        gridTemplateColumns: '1fr',
       },
-      gap: 20
+      gap: 20,
     },
     showTechnologiesContainer: {
       marginRight: 'auto',
       [theme.breakpoints.down('md')]: {
         margin: '0 auto',
       },
-    }
-  }),
+    },
+  })
 );
 
 export const Projects = () => {
@@ -51,14 +51,16 @@ export const Projects = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>projects</Typography>
+      <Typography variant="h4" className={classes.title}>
+        projects
+      </Typography>
       <Box m={3} textAlign="center">
         <Typography variant="h6" className={classes.body}>
           From full stack web development to data engineering...
-      </Typography>
+        </Typography>
         <Typography variant="h6" className={classes.body}>
           Check out my latest projects
-      </Typography>
+        </Typography>
       </Box>
       <div className={classes.showTechnologiesContainer}>
         <SwitchToggle
@@ -69,10 +71,10 @@ export const Projects = () => {
         />
       </div>
       <div className={classes.projectsContainer}>
-        {projects.map((project: IProject, index) => {
+        {projects.map((project: IProject) => {
           return (
             <Project
-              key={`${project.title}-${index}`}
+              key={project.title}
               image={project.image}
               title={project.title}
               githubRepo={project.githubRepo}
@@ -80,10 +82,9 @@ export const Projects = () => {
               technologies={project.technologies}
               showTechnologies={showTechnologies}
             />
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 };
-

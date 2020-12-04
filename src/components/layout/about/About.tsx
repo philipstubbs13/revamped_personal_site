@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
-import profileImage from '../../../images/profile.jpg';
 import Avatar from '@material-ui/core/Avatar';
+import profileImage from '../../../images/profile.jpg';
 import { TimelineView } from '../../timeline-view/TimelineView';
 import { experiences } from '../../../data/experieces';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textDecoration: 'none',
       '&:hover': {
         color: theme.palette.text.primary,
-      }
+      },
     },
     avatar: {
       width: 160,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       alignItems: 'center',
     },
-  }),
+  })
 );
 
 export const About = () => {
@@ -48,7 +48,9 @@ export const About = () => {
     <div>
       <Box p={5} className={classes.bio}>
         <Avatar alt="Phil Stubbs" src={profileImage} className={classes.avatar} />
-        <Typography variant="h4" className={classes.title}>Hello, my name is Phil Stubbs.</Typography>
+        <Typography variant="h4" className={classes.title}>
+          Hello, my name is Phil Stubbs.
+        </Typography>
         <Box m={3} textAlign="center">
           <Typography variant="subtitle1" className={classes.body}>
             I am a full stack web developer and data engineer.
@@ -57,7 +59,11 @@ export const About = () => {
             I specialize in JavaScript, Python, and Technical Writing.
           </Typography>
           <Typography variant="subtitle1" className={classes.body}>
-            Feel free to take a look at my latest projects on the <Link className={classes.projectsLink} to="/projects">projects</Link> page.
+            Feel free to take a look at my latest projects on the{' '}
+            <Link className={classes.projectsLink} to="/projects">
+              projects
+            </Link>{' '}
+            page.
           </Typography>
         </Box>
       </Box>
@@ -65,5 +71,5 @@ export const About = () => {
         <TimelineView timelineItems={experiences} />
       </Box>
     </div>
-  )
+  );
 };

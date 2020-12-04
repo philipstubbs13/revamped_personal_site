@@ -11,25 +11,25 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 20,
       '&:hover': {
         color: theme.palette.secondary.main,
-      }
-    }
-  }),
+      },
+    },
+  })
 );
 
 export interface IProps {
-  profileLink: string,
-  platform: string,
+  profileLink: string;
+  platform: string;
 }
 
 export const SocialLink = (props: IProps) => {
   const classes = useStyles();
 
   return (
-      <IconButton className={classes.socialButton} href={props.profileLink} target="_blank">
-        <i className={`fab fa-2x fa-${props.platform}`}></i>
-      </IconButton>
-  )
-}
+    <IconButton className={classes.socialButton} href={props.profileLink} target="_blank">
+      <i className={`fab fa-2x fa-${props.platform}`} />
+    </IconButton>
+  );
+};
 
 SocialLink.propTypes = {
   profileLink: PropTypes.string.isRequired,

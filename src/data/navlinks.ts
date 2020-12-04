@@ -1,17 +1,17 @@
 export const navlinks = [
-  { 
+  {
     title: 'About',
     route: '/',
-    icon: 'info-circle'
+    icon: 'info-circle',
   },
-  { 
+  {
     title: 'Projects',
     route: '/projects',
-    icon: 'code'
+    icon: 'code',
   },
-  { 
+  {
     title: 'Contact',
     route: '/contact',
-    icon: 'envelope'
+    icon: 'envelope',
   },
-]
+];

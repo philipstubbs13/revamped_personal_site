@@ -8,8 +8,8 @@ import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { Experience } from '../../../data/experieces';
 import Avatar from '@material-ui/core/Avatar';
+import { Experience } from '../../../data/experieces';
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export interface IProps {
-  timelineItem: Experience
+  timelineItem: Experience;
 }
 
 export const TimelineViewItem = (props: IProps) => {
@@ -44,20 +44,26 @@ export const TimelineViewItem = (props: IProps) => {
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot>
-          <Avatar alt={props.timelineItem.title} src={props.timelineItem.avatar} className={classes.avatar} />
+          <Avatar
+            alt={props.timelineItem.title}
+            src={props.timelineItem.avatar}
+            className={classes.avatar}
+          />
         </TimelineDot>
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
         <Paper elevation={3} className={classes.paper}>
-          <Typography variant="subtitle1"className={classes.bold}>
+          <Typography variant="subtitle1" className={classes.bold}>
             {props.timelineItem.title}
           </Typography>
           {props.timelineItem.description && (
-            <Typography variant="body2" className={classes.muted}>{props.timelineItem.description}</Typography>
+            <Typography variant="body2" className={classes.muted}>
+              {props.timelineItem.description}
+            </Typography>
           )}
         </Paper>
       </TimelineContent>
     </TimelineItem>
   );
-}
+};

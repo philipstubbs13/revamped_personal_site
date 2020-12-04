@@ -1,28 +1,28 @@
 export interface ISocial {
-  key?: string,
-  profileLink: string,
-  platform: string,
+  key?: string;
+  profileLink: string;
+  platform: string;
 }
 
 export const social = [
   {
     profileLink: 'https://www.tiktok.com/@thephilstubbs',
-    platform: 'tiktok'
+    platform: 'tiktok',
   },
   {
     profileLink: 'https://twitter.com/iamPhilStubbs',
-    platform: 'twitter'
+    platform: 'twitter',
   },
   {
     profileLink: 'https://github.com/philipstubbs13',
-    platform: 'github'
+    platform: 'github',
   },
   {
     profileLink: 'https://www.linkedin.com/in/philipjstubbs/',
-    platform: 'linkedin'
+    platform: 'linkedin',
   },
   {
     profileLink: 'https://www.facebook.com/phil.stubbs.13/',
-    platform: 'facebook'
+    platform: 'facebook',
   },
 ];

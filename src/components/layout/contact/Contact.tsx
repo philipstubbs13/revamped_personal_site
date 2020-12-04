@@ -1,8 +1,8 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { FormStepper } from '../../form-stepper/FormStepper';
 import Container from '@material-ui/core/Container';
+import { FormStepper } from '../../form-stepper/FormStepper';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -18,7 +18,7 @@ const useStyles = makeStyles(() =>
       lineHeight: 2,
       fontWeight: 'bold',
     },
-  }),
+  })
 );
 
 export const Contact = () => {
@@ -26,7 +26,9 @@ export const Contact = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>Get in touch</Typography>
+      <Typography variant="h4" className={classes.title}>
+        Get in touch
+      </Typography>
       <Box m={3} textAlign="center">
         <Typography variant="h6" className={classes.body}>
           If you want to get in touch, talk to me about a project collaboration, or just say hi,
@@ -39,5 +41,5 @@ export const Contact = () => {
         <FormStepper />
       </Container>
     </div>
-  )
+  );
 };
