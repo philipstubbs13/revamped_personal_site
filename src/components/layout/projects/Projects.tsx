@@ -25,12 +25,12 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down('md')]: {
         gridTemplateColumns: 'repeat(2, 1fr)',
       },
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('xs')]: {
         gridTemplateColumns: '1fr',
       },
       gap: 20,
     },
-    showTechnologiesContainer: {
+    inputsContainer: {
       marginRight: 'auto',
       [theme.breakpoints.down('md')]: {
         margin: '0 auto',
@@ -50,8 +50,9 @@ const useStyles = makeStyles((theme: Theme) =>
     inputLabelRoot: {
       color: theme.palette.text.primary,
     },
-    selectRoot: {
-      marginTop: 20,
+    chip: {
+      marginRight: 10,
+      marginTop: 5,
     },
   })
 );
@@ -94,7 +95,7 @@ export const Projects = () => {
           Check out my latest projects
         </Typography>
       </Box>
-      <div className={classes.showTechnologiesContainer}>
+      <div className={classes.inputsContainer}>
         <FormControl className={classes.formControl}>
           <InputLabel id="project-type-input-label" className={classes.inputLabelRoot}>
             Filter by project type
@@ -121,6 +122,9 @@ export const Projects = () => {
           label="Show Technologies"
         />
       </div>
+      {/* {Object.values(TechStack).map((tech) => {
+        return <Chip className={classes.chip} label={tech} onClick={() => {}} variant="outlined" />;
+      })} */}
       <div className={classes.projectsContainer}>
         {filteredProjects.map((project: IProject) => {
           return (
@@ -132,6 +136,7 @@ export const Projects = () => {
               website={project.website}
               technologies={project.technologies}
               showTechnologies={showTechnologies}
+              description={project.description}
             />
           );
         })}

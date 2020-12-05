@@ -35,6 +35,7 @@ export interface IProject {
   website?: string;
   technologies: string[];
   type: string;
+  description: string;
 }
 
 export const projects: IProject[] = [
@@ -59,6 +60,8 @@ export const projects: IProject[] = [
       'VADER',
     ],
     type: 'data',
+    description:
+      'Using data, natural language processing, and machine learning to analyze and improve mental health conversations in the tech community.',
   },
   {
     image: australiaFiresImage,
@@ -77,6 +80,8 @@ export const projects: IProject[] = [
       'Leaflet',
     ],
     type: 'data',
+    description:
+      'This project explores how wildfires have affected Australia over time through data visualizations, including interactive time series charts, plots and a map.',
   },
   {
     image: youtubeImage,
@@ -85,6 +90,8 @@ export const projects: IProject[] = [
     website: 'https://philipstubbs13.github.io/Web-Design-Challenge/#/youtube-insights',
     technologies: ['YouTube API', 'Jupyter Notebook', 'Python', 'Pandas', 'Matplotlib'],
     type: 'data',
+    description:
+      'Using a public dataset powered by the YouTube API, this project uncovers some key observations and insights into trending videos in the US and around the world for one of the largest search engines and one of the largest social media platforms.',
   },
   {
     image: d3DataJournalismImage,
@@ -93,6 +100,8 @@ export const projects: IProject[] = [
     website: 'https://d3-data-journalism-9cb59.web.app/',
     technologies: ['D3', 'JavaScript', 'Firebase'],
     type: 'data',
+    description:
+      'A scatter plot visualization built using D3 intended to show various health risks facing particular demographics across different states in the U.S. (for example, access to healthcare vs median household income).',
   },
   {
     image: tableauImage,
@@ -102,6 +111,8 @@ export const projects: IProject[] = [
       'https://public.tableau.com/profile/phil.stubbs#!/vizhome/CitiBikeAnalytics_15879541754520/NewYorkCitiBikeAnalyticsandInsights',
     technologies: ['Tableau'],
     type: 'data',
+    description:
+      'A data visualization project that helps publicize and share information about the New York Citi Bike program from March 2019 to March 2020. Built using Tableau.',
   },
   {
     image: marsWebScrapingImage,
@@ -117,6 +128,8 @@ export const projects: IProject[] = [
       'Beautiful Soup',
     ],
     type: 'data',
+    description:
+      'A web application that scrapes various websites for data related to Mars and displays the information in a single HTML page.',
   },
   {
     image: sheltrImage,
@@ -135,6 +148,8 @@ export const projects: IProject[] = [
       'Express',
     ],
     type: 'web_development',
+    description:
+      'This project hopes to solve and slow down the rapidly growing homeless crisis in Minneapolis. The project is a mobile and web based app intended for homeless people to use as a resource and intended to help streamline the process of checking into a shelter. ',
   },
   {
     image: swagImage,
@@ -153,6 +168,8 @@ export const projects: IProject[] = [
       'CSS Grid',
     ],
     type: 'web_development',
+    description:
+      'Running with Swag is an online community created by runners, for runners. Whether you are a competitive runner, running enthusiast, or just a beginner, this site has something for you.',
   },
   {
     image: pizzaImage,
@@ -169,6 +186,8 @@ export const projects: IProject[] = [
       'Edamam Recipe Search API',
     ],
     type: 'web_development',
+    description:
+      'The MyCookingAssistant app is a search engine that returns the most relevant recipes from the most popular sites on the web.',
   },
   {
     image: burgerImage,
@@ -188,6 +207,8 @@ export const projects: IProject[] = [
       'ORM',
     ],
     type: 'web_development',
+    description:
+      'A full stack, MVC (Model-View-Controller) application that allows you to create burgers (POST), view a list of burgers available to eat (GET), devour burgers (PUT), and throw them away after devoured (DELETE).',
   },
   {
     image: awesomeBurgerImage,
@@ -207,6 +228,8 @@ export const projects: IProject[] = [
       'ORM',
     ],
     type: 'web_development',
+    description:
+      'A full stack, MVC (Model-View-Controller) application that allows you to create burgers (POST), view a list of burgers available to eat (GET), devour burgers (PUT), and throw them away after devoured (DELETE).',
   },
   {
     image: adoptMeImage,
@@ -227,6 +250,8 @@ export const projects: IProject[] = [
       'Facebook auth',
     ],
     type: 'web_development',
+    description:
+      'AdoptMeNow is a full stack, MVC (Model-View-Controller) application that connects people with animal welfare organizations (AWO) in their area and helps streamline and simplify the pet adoption process.',
   },
   {
     image: eduVentsImage,
@@ -243,6 +268,8 @@ export const projects: IProject[] = [
       'react-big-calendar',
     ],
     type: 'web_development',
+    description:
+      'A platform for helping parents and schools find after school events and activities for their students to get involved in.',
   },
   {
     image: artImage,
@@ -260,6 +287,7 @@ export const projects: IProject[] = [
       'react-chartkick',
     ],
     type: 'web_development',
+    description: 'A web app for local artists to showcase their artwork to their community.',
   },
   {
     image: clickmeImage,
@@ -268,6 +296,8 @@ export const projects: IProject[] = [
     website: 'https://clickme-d27eb.firebaseapp.com/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React'],
     type: 'web_development',
+    description:
+      'ClickMe is a memory skill application built using React. The objective of the game is to be able to go through and click each player image once.',
   },
   {
     image: giffinderImage,
@@ -276,6 +306,8 @@ export const projects: IProject[] = [
     website: 'https://philipstubbs13.github.io/Giphy-API-Project/index.html',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'AJAX', 'GIPHY API'],
     type: 'web_development',
+    description:
+      'This website uses the GIPHY API to populate the site with gifs of your favorite athletes. Specifically, it uses the jQuery AJAX method to perform AJAX GET requests to the query URL to get data from the GIPHY API. ',
   },
   {
     image: hangmanImage,
@@ -284,6 +316,7 @@ export const projects: IProject[] = [
     website: 'https://philipstubbs13.github.io/Giphy-API-Project/index.html',
     technologies: ['HTML', 'CSs', 'JavaScript', 'Bootstrap', 'jQuery'],
     type: 'web_development',
+    description: 'The classic hangman game built using JavaScript.',
   },
   {
     image: carpoolImage,
@@ -292,6 +325,8 @@ export const projects: IProject[] = [
     website: 'https://blooming-lowlands-71441.herokuapp.com/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node', 'Express'],
     type: 'web_development',
+    description:
+      'A full stack application that matches you up with another user so that you can take advantage of the carpool lane and have someone to ride with to and from work.',
   },
   {
     image: bamazonImage,
@@ -300,6 +335,8 @@ export const projects: IProject[] = [
     website: '',
     technologies: ['Node', 'JavaScript', 'MySQL'],
     type: 'web_development',
+    description:
+      'This project is a command line application built using Node.js, Javascript, the inquirer npm package, and a MySQL database. It is an Amazon-like storefront that takes in customer orders on various sporting goods and outdoor items through the Bamazon Customer Portal.',
   },
   {
     image: crystalImage,
@@ -308,6 +345,7 @@ export const projects: IProject[] = [
     website: 'https://philipstubbs13.github.io/week-4-game/index.html',
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
     type: 'web_development',
+    description: 'A simple game built using jQuery and JavaScript.',
   },
   {
     image: twitterImage,
@@ -316,6 +354,8 @@ export const projects: IProject[] = [
     website: '',
     technologies: ['Node'],
     type: 'web_development',
+    description:
+      'LIRI is a command line node app that takes in parameters and gives you back tweets, songs, and movies.',
   },
   {
     image: scraperImage,
@@ -335,6 +375,8 @@ export const projects: IProject[] = [
       'Mongoose ORM',
     ],
     type: 'web_development',
+    description:
+      'An application that scrapes all the major news articles related to college basketball',
   },
   {
     image: healthTrackerImage,
@@ -355,6 +397,8 @@ export const projects: IProject[] = [
       'AWS S3',
     ],
     type: 'web_development',
+    description:
+      'A MERN stack application that allows you to log and keep track of your health information so that you can easily share and discuss that information with your doctor at your next visit',
   },
   {
     image: myTrainBuilderImage,
@@ -363,6 +407,8 @@ export const projects: IProject[] = [
     website: 'https://fir-train-scheduler-7f4a9.firebaseapp.com/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Firebase', 'Moment'],
     type: 'web_development',
+    description:
+      'A train schedule application that incorporates Firebase to host arrival and departure data.',
   },
   {
     image: newsImage,
@@ -382,6 +428,8 @@ export const projects: IProject[] = [
       'New York Times Article Search API',
     ],
     type: 'web_development',
+    description:
+      'A React application that uses the New York Times Article Search API to retrieve news articles by topic and year.',
   },
   {
     image: skylineImage,
@@ -390,6 +438,8 @@ export const projects: IProject[] = [
     website: '',
     technologies: ['Node', 'JavaScript constructors'],
     type: 'web_development',
+    description:
+      'A command line version of the classic Hangman game using JavaScript constructors.',
   },
   {
     image: stadiumImage,
@@ -398,6 +448,7 @@ export const projects: IProject[] = [
     website: 'https://philipstubbs13.github.io/TriviaGame/index.html',
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
     type: 'web_development',
+    description: 'A sports trivia game built using JavaScript',
   },
   {
     image: starwarsImage,
@@ -406,5 +457,6 @@ export const projects: IProject[] = [
     website: 'https://philipstubbs13.github.io/Star-Wars-RPG-Game/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
     type: 'web_development',
+    description: 'A simple Star Wars role playing game built using JavaScript',
   },
 ];

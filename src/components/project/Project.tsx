@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Collapse from '@material-ui/core/Collapse';
+import { ProjectTooltip } from './project-tooltip/ProjectTooltip';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -45,6 +46,9 @@ const useStyles = makeStyles((theme: Theme) =>
     expandOpen: {
       transform: 'rotate(180deg)',
     },
+    title: {
+      fontSize: 20,
+    },
   })
 );
 
@@ -55,19 +59,20 @@ interface IProps {
   website?: string;
   technologies?: string[];
   showTechnologies: boolean;
+  description: string;
 }
 
 export const Project = (props: IProps) => {
   const classes = useStyles();
-  const { image, title, githubRepo, website, showTechnologies, technologies } = props;
+  const { image, title, githubRepo, website, showTechnologies, technologies, description } = props;
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
+          <Typography gutterBottom className={classes.title}>
+            {title} <ProjectTooltip title={title} description={description} />
           </Typography>
           <div className={classes.links}>
             <IconButton
@@ -107,6 +112,7 @@ Project.propTypes = {
   website: PropTypes.string,
   technologies: PropTypes.arrayOf(string),
   showTechnologies: PropTypes.bool.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 Project.defaultProps = {
