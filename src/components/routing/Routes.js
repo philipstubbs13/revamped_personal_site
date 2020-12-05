@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+/* eslint-disable prettier/prettier */
 import { Route, Switch } from 'react-router-dom';
 import { NotFound } from '../layout/not-found/NotFound';
 import { Contact } from '../layout/contact/Contact';
@@ -14,9 +13,5 @@ export const Routes = () => {
       <Route exact path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
-  )
-}
-
-Routes.propTypes = {
-
+  );
 };

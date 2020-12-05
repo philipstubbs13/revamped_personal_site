@@ -21,6 +21,7 @@ export interface IProps {
 
 export const TimelineView = (props: IProps) => {
   const classes = useStyles();
+  const { timelineItems } = props;
 
   return (
     <Timeline align="alternate">
@@ -32,7 +33,7 @@ export const TimelineView = (props: IProps) => {
           Here is a timeline of where I have been and what I have done.
         </Typography>
       </Box>
-      {props.timelineItems.map((timelineItem: Experience, index) => {
+      {timelineItems.map((timelineItem: Experience, index) => {
         return (
           <TimelineViewItem key={`${timelineItem.title}-${index}`} timelineItem={timelineItem} />
         );

@@ -23,10 +23,11 @@ export interface IProps {
 
 export const SocialLink = (props: IProps) => {
   const classes = useStyles();
+  const { profileLink, platform } = props;
 
   return (
-    <IconButton className={classes.socialButton} href={props.profileLink} target="_blank">
-      <i className={`fab fa-2x fa-${props.platform}`} />
+    <IconButton className={classes.socialButton} href={profileLink} target="_blank">
+      <i className={`fab fa-2x fa-${platform}`} />
     </IconButton>
   );
 };

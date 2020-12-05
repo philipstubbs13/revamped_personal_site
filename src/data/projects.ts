@@ -25,6 +25,7 @@ import youtubeImage from '../images/youtube.png';
 import mentalHealthImage from '../images/mental_health.png';
 import d3DataJournalismImage from '../images/d3_data_journalism.png';
 import tableauImage from '../images/tableau.png';
+import marsWebScrapingImage from '../images/mars_web_scraping.png';
 
 export interface IProject {
   key?: string;
@@ -95,6 +96,20 @@ export const projects: IProject[] = [
     website:
       'https://public.tableau.com/profile/phil.stubbs#!/vizhome/CitiBikeAnalytics_15879541754520/NewYorkCitiBikeAnalyticsandInsights',
     technologies: ['Tableau'],
+  },
+  {
+    image: marsWebScrapingImage,
+    title: 'Mars Web Scraping',
+    githubRepo: 'https://github.com/philipstubbs13/web-scraping-challenge',
+    technologies: [
+      'MongoDB',
+      'Flask',
+      'Splinter',
+      'Requests',
+      'Jupyter Notebook',
+      'Python',
+      'Beautiful Soup',
+    ],
   },
   {
     image: sheltrImage,

@@ -59,40 +59,41 @@ interface IProps {
 
 export const Project = (props: IProps) => {
   const classes = useStyles();
+  const { image, title, githubRepo, website, showTechnologies, technologies } = props;
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia className={classes.media} image={props.image} title={props.title} />
+        <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {props.title}
+            {title}
           </Typography>
           <div className={classes.links}>
             <IconButton
               size="small"
               color="primary"
               className={classes.socialButton}
-              href={props.githubRepo}
+              href={githubRepo}
               target="_blank"
             >
               <i className="fab fa-2x fa-github" />
             </IconButton>
-            {props.website && (
+            {website && (
               <IconButton
                 size="small"
                 color="primary"
                 className={classes.socialButton}
-                href={props.website}
+                href={website}
                 target="_blank"
               >
                 <i className="fas fa-2x fa-globe" />
               </IconButton>
             )}
           </div>
-          <Collapse in={props.showTechnologies} timeout="auto" unmountOnExit>
-            {props.technologies &&
-              props.technologies.map((technology) => (
+          <Collapse in={showTechnologies} timeout="auto" unmountOnExit>
+            {technologies &&
+              technologies.map((technology) => (
                 <Chip className={classes.chip} color="secondary" label={technology} />
               ))}
           </Collapse>

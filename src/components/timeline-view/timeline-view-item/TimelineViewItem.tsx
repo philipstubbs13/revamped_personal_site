@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import { Experience } from '../../../data/experieces';
+import { TimelineViewTooltip } from '../timeline-view-tooltip/TimelineViewTooltip';
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -33,33 +34,33 @@ export interface IProps {
 }
 
 export const TimelineViewItem = (props: IProps) => {
+  const {
+    timelineItem: { start, end, title, avatar, description, details },
+  } = props;
   const classes = useStyles();
 
   return (
     <TimelineItem>
       <TimelineOppositeContent>
         <Typography variant="body2">
-          {props.timelineItem.start} - {props.timelineItem.end ? props.timelineItem.end : 'Present'}
+          {start} - {end || 'Present'}
         </Typography>
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot>
-          <Avatar
-            alt={props.timelineItem.title}
-            src={props.timelineItem.avatar}
-            className={classes.avatar}
-          />
+          <Avatar alt={title} src={avatar} className={classes.avatar} />
         </TimelineDot>
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
         <Paper elevation={3} className={classes.paper}>
           <Typography variant="subtitle1" className={classes.bold}>
-            {props.timelineItem.title}
+            {title}{' '}
+            <TimelineViewTooltip title={title} description={description} details={details} />
           </Typography>
-          {props.timelineItem.description && (
+          {description && (
             <Typography variant="body2" className={classes.muted}>
-              {props.timelineItem.description}
+              {description}
             </Typography>
           )}
         </Paper>

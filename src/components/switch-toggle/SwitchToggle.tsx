@@ -12,10 +12,12 @@ interface IProps {
 }
 
 export const SwitchToggle = (props: IProps) => {
+  const { isChecked, onChange, name, label } = props;
+
   return (
     <FormControlLabel
-      control={<Switch checked={props.isChecked} onChange={props.onChange} name={props.name} />}
-      label={props.label}
+      control={<Switch checked={isChecked} onChange={onChange} name={name} />}
+      label={label}
     />
   );
 };
