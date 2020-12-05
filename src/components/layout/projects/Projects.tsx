@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { Project } from '../../project/Project';
 import { projects, IProject } from '../../../data/projects';
 import { SwitchToggle } from '../../switch-toggle/SwitchToggle';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-    },
     title: {
       fontWeight: 'bold',
     },
@@ -37,6 +35,23 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down('md')]: {
         margin: '0 auto',
       },
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    formControl: {
+      minWidth: 180,
+      width: 180,
+    },
+    selectEmpty: {
+      marginTop: 20,
+    },
+    inputLabelRoot: {
+      color: theme.palette.text.primary,
+    },
+    selectRoot: {
+      marginTop: 20,
     },
   })
 );
@@ -44,25 +59,61 @@ const useStyles = makeStyles((theme: Theme) =>
 export const Projects = () => {
   const classes = useStyles();
   const [showTechnologies, setShowTechnologies] = useState(false);
+  const [projectType, setProjectType] = useState('all');
+  const [filteredProjects, setFilteredProjects] = useState(projects);
 
   const handleChangeShowTechnologies = (event: React.ChangeEvent<HTMLInputElement>) => {
     setShowTechnologies(event.target.checked);
   };
 
+  const handleChangeProjectType = (event: React.ChangeEvent<{ value: unknown }>) => {
+    const projectTypeSelected = event.target.value as string;
+    let filteredProjectsToDisplay = [...projects];
+    setProjectType(projectTypeSelected);
+
+    if (projectTypeSelected === 'all') {
+      setFilteredProjects(filteredProjectsToDisplay);
+    } else {
+      filteredProjectsToDisplay = filteredProjectsToDisplay.filter(
+        (project) => project.type === projectTypeSelected
+      );
+      setFilteredProjects(filteredProjectsToDisplay);
+    }
+  };
+
   return (
-    <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>
-        projects
-      </Typography>
+    <div>
       <Box m={3} textAlign="center">
-        <Typography variant="h6" className={classes.body}>
-          From full stack web development to data engineering...
+        <Typography variant="h4" className={classes.title}>
+          projects
         </Typography>
+      </Box>
+      <Box m={3} textAlign="center">
+        <Typography variant="h6">From full stack web development to data engineering...</Typography>
         <Typography variant="h6" className={classes.body}>
           Check out my latest projects
         </Typography>
       </Box>
       <div className={classes.showTechnologiesContainer}>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="project-type-input-label" className={classes.inputLabelRoot}>
+            Filter by project type
+          </InputLabel>
+          <Select
+            labelId="project-type-select"
+            id="project-type-select"
+            value={projectType}
+            onChange={handleChangeProjectType}
+            displayEmpty
+            className={classes.selectEmpty}
+            variant="outlined"
+          >
+            <MenuItem value="all">All Projects</MenuItem>
+            <MenuItem value="web_development">Web Development</MenuItem>
+            <MenuItem value="data">Data</MenuItem>
+            <MenuItem value="technical_writing">Technical Writing</MenuItem>
+          </Select>
+        </FormControl>
         <SwitchToggle
           isChecked={showTechnologies}
           onChange={handleChangeShowTechnologies}
@@ -71,7 +122,7 @@ export const Projects = () => {
         />
       </div>
       <div className={classes.projectsContainer}>
-        {projects.map((project: IProject) => {
+        {filteredProjects.map((project: IProject) => {
           return (
             <Project
               key={project.title}

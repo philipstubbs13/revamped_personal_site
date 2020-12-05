@@ -34,6 +34,7 @@ export interface IProject {
   githubRepo: string;
   website?: string;
   technologies: string[];
+  type: string;
 }
 
 export const projects: IProject[] = [
@@ -57,6 +58,7 @@ export const projects: IProject[] = [
       'TextBlob',
       'VADER',
     ],
+    type: 'data',
   },
   {
     image: australiaFiresImage,
@@ -74,6 +76,7 @@ export const projects: IProject[] = [
       'd3-timeseries',
       'Leaflet',
     ],
+    type: 'data',
   },
   {
     image: youtubeImage,
@@ -81,6 +84,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/team_hopper',
     website: 'https://philipstubbs13.github.io/Web-Design-Challenge/#/youtube-insights',
     technologies: ['YouTube API', 'Jupyter Notebook', 'Python', 'Pandas', 'Matplotlib'],
+    type: 'data',
   },
   {
     image: d3DataJournalismImage,
@@ -88,6 +92,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/D3-challenge',
     website: 'https://d3-data-journalism-9cb59.web.app/',
     technologies: ['D3', 'JavaScript', 'Firebase'],
+    type: 'data',
   },
   {
     image: tableauImage,
@@ -96,6 +101,7 @@ export const projects: IProject[] = [
     website:
       'https://public.tableau.com/profile/phil.stubbs#!/vizhome/CitiBikeAnalytics_15879541754520/NewYorkCitiBikeAnalyticsandInsights',
     technologies: ['Tableau'],
+    type: 'data',
   },
   {
     image: marsWebScrapingImage,
@@ -110,6 +116,7 @@ export const projects: IProject[] = [
       'Python',
       'Beautiful Soup',
     ],
+    type: 'data',
   },
   {
     image: sheltrImage,
@@ -127,6 +134,7 @@ export const projects: IProject[] = [
       'Twilio API',
       'Express',
     ],
+    type: 'web_development',
   },
   {
     image: swagImage,
@@ -144,6 +152,7 @@ export const projects: IProject[] = [
       'Tumblr API',
       'CSS Grid',
     ],
+    type: 'web_development',
   },
   {
     image: pizzaImage,
@@ -159,6 +168,7 @@ export const projects: IProject[] = [
       'Firebase',
       'Edamam Recipe Search API',
     ],
+    type: 'web_development',
   },
   {
     image: burgerImage,
@@ -177,6 +187,7 @@ export const projects: IProject[] = [
       'Express',
       'ORM',
     ],
+    type: 'web_development',
   },
   {
     image: awesomeBurgerImage,
@@ -195,6 +206,7 @@ export const projects: IProject[] = [
       'Express',
       'ORM',
     ],
+    type: 'web_development',
   },
   {
     image: adoptMeImage,
@@ -214,6 +226,7 @@ export const projects: IProject[] = [
       'Sequelize ORM',
       'Facebook auth',
     ],
+    type: 'web_development',
   },
   {
     image: eduVentsImage,
@@ -229,6 +242,7 @@ export const projects: IProject[] = [
       'Material UI',
       'react-big-calendar',
     ],
+    type: 'web_development',
   },
   {
     image: artImage,
@@ -245,6 +259,7 @@ export const projects: IProject[] = [
       'React',
       'react-chartkick',
     ],
+    type: 'web_development',
   },
   {
     image: clickmeImage,
@@ -252,6 +267,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/ClickMe',
     website: 'https://clickme-d27eb.firebaseapp.com/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React'],
+    type: 'web_development',
   },
   {
     image: giffinderImage,
@@ -259,6 +275,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/Giphy-API-Project',
     website: 'https://philipstubbs13.github.io/Giphy-API-Project/index.html',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'AJAX', 'GIPHY API'],
+    type: 'web_development',
   },
   {
     image: hangmanImage,
@@ -266,6 +283,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/Hangman-Game',
     website: 'https://philipstubbs13.github.io/Giphy-API-Project/index.html',
     technologies: ['HTML', 'CSs', 'JavaScript', 'Bootstrap', 'jQuery'],
+    type: 'web_development',
   },
   {
     image: carpoolImage,
@@ -273,6 +291,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/FriendFinder',
     website: 'https://blooming-lowlands-71441.herokuapp.com/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node', 'Express'],
+    type: 'web_development',
   },
   {
     image: bamazonImage,
@@ -280,6 +299,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/Bamazon',
     website: '',
     technologies: ['Node', 'JavaScript', 'MySQL'],
+    type: 'web_development',
   },
   {
     image: crystalImage,
@@ -287,6 +307,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/week-4-game',
     website: 'https://philipstubbs13.github.io/week-4-game/index.html',
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
+    type: 'web_development',
   },
   {
     image: twitterImage,
@@ -294,6 +315,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/liri-node-app',
     website: '',
     technologies: ['Node'],
+    type: 'web_development',
   },
   {
     image: scraperImage,
@@ -312,6 +334,7 @@ export const projects: IProject[] = [
       'Express',
       'Mongoose ORM',
     ],
+    type: 'web_development',
   },
   {
     image: healthTrackerImage,
@@ -331,6 +354,7 @@ export const projects: IProject[] = [
       'Mongoose ORM',
       'AWS S3',
     ],
+    type: 'web_development',
   },
   {
     image: myTrainBuilderImage,
@@ -338,6 +362,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/Firebase-Train-Scheduler',
     website: 'https://fir-train-scheduler-7f4a9.firebaseapp.com/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Firebase', 'Moment'],
+    type: 'web_development',
   },
   {
     image: newsImage,
@@ -356,6 +381,7 @@ export const projects: IProject[] = [
       'Mongoose ORM',
       'New York Times Article Search API',
     ],
+    type: 'web_development',
   },
   {
     image: skylineImage,
@@ -363,6 +389,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/constructor-hangman',
     website: '',
     technologies: ['Node', 'JavaScript constructors'],
+    type: 'web_development',
   },
   {
     image: stadiumImage,
@@ -370,6 +397,7 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/TriviaGame',
     website: 'https://philipstubbs13.github.io/TriviaGame/index.html',
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
+    type: 'web_development',
   },
   {
     image: starwarsImage,
@@ -377,5 +405,6 @@ export const projects: IProject[] = [
     githubRepo: 'https://github.com/philipstubbs13/Star-Wars-RPG-Game',
     website: 'https://philipstubbs13.github.io/Star-Wars-RPG-Game/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
+    type: 'web_development',
   },
 ];
