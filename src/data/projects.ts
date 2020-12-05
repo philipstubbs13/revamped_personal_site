@@ -81,7 +81,7 @@ export const projects: IProject[] = [
     ],
     type: 'data',
     description:
-      'This project explores how wildfires have affected Australia over time through data visualizations, including interactive time series charts, plots and a map.',
+      'An exploration of how wildfires have affected Australia over time through data visualizations, including interactive time series charts, plots and a map.',
   },
   {
     image: youtubeImage,
@@ -91,7 +91,7 @@ export const projects: IProject[] = [
     technologies: ['YouTube API', 'Jupyter Notebook', 'Python', 'Pandas', 'Matplotlib'],
     type: 'data',
     description:
-      'Using a public dataset powered by the YouTube API, this project uncovers some key observations and insights into trending videos in the US and around the world for one of the largest search engines and one of the largest social media platforms.',
+      'Using a public dataset powered by the YouTube API, this project uncovers  insights into trending videos for one of the largest search engines and one of the largest social media platforms.',
   },
   {
     image: d3DataJournalismImage,
@@ -101,7 +101,7 @@ export const projects: IProject[] = [
     technologies: ['D3', 'JavaScript', 'Firebase'],
     type: 'data',
     description:
-      'A scatter plot visualization built using D3 intended to show various health risks facing particular demographics across different states in the U.S. (for example, access to healthcare vs median household income).',
+      'A visualization built using D3 intended to show various health risks facing particular demographics across different states in the U.S. (for example, access to healthcare vs median household income).',
   },
   {
     image: tableauImage,
@@ -149,7 +149,7 @@ export const projects: IProject[] = [
     ],
     type: 'web_development',
     description:
-      'This project hopes to solve and slow down the rapidly growing homeless crisis in Minneapolis. The project is a mobile and web based app intended for homeless people to use as a resource and intended to help streamline the process of checking into a shelter. ',
+      'The project is a mobile and web based app intended for homeless people to use in Minneapolis as a resource and intended to help streamline the process of checking into a shelter. ',
   },
   {
     image: swagImage,
@@ -169,7 +169,7 @@ export const projects: IProject[] = [
     ],
     type: 'web_development',
     description:
-      'Running with Swag is an online community created by runners, for runners. Whether you are a competitive runner, running enthusiast, or just a beginner, this site has something for you.',
+      'An online community created by runners, for runners. Whether you are a competitive runner, running enthusiast, or just a beginner, this site has something for you.',
   },
   {
     image: pizzaImage,
@@ -187,7 +187,7 @@ export const projects: IProject[] = [
     ],
     type: 'web_development',
     description:
-      'The MyCookingAssistant app is a search engine that returns the most relevant recipes from the most popular sites on the web.',
+      'A search engine that returns the most relevant recipes from the most popular sites on the web.',
   },
   {
     image: burgerImage,
@@ -251,7 +251,7 @@ export const projects: IProject[] = [
     ],
     type: 'web_development',
     description:
-      'AdoptMeNow is a full stack, MVC (Model-View-Controller) application that connects people with animal welfare organizations (AWO) in their area and helps streamline and simplify the pet adoption process.',
+      'A full stack, MVC (Model-View-Controller) application that connects people with animal welfare organizations (AWO) in their area and helps streamline and simplify the pet adoption process.',
   },
   {
     image: eduVentsImage,
@@ -297,7 +297,7 @@ export const projects: IProject[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React'],
     type: 'web_development',
     description:
-      'ClickMe is a memory skill application built using React. The objective of the game is to be able to go through and click each player image once.',
+      'A memory skill application built using React. The objective of the game is to be able to go through and click each player image once.',
   },
   {
     image: giffinderImage,
@@ -307,7 +307,7 @@ export const projects: IProject[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'AJAX', 'GIPHY API'],
     type: 'web_development',
     description:
-      'This website uses the GIPHY API to populate the site with gifs of your favorite athletes. Specifically, it uses the jQuery AJAX method to perform AJAX GET requests to the query URL to get data from the GIPHY API. ',
+      'This website uses the GIPHY API to populate the site with gifs of your favorite athletes.',
   },
   {
     image: hangmanImage,
@@ -336,7 +336,7 @@ export const projects: IProject[] = [
     technologies: ['Node', 'JavaScript', 'MySQL'],
     type: 'web_development',
     description:
-      'This project is a command line application built using Node.js, Javascript, the inquirer npm package, and a MySQL database. It is an Amazon-like storefront that takes in customer orders on various sporting goods and outdoor items through the Bamazon Customer Portal.',
+      'A command line application built using Node.js, Javascript, the inquirer npm package, and a MySQL database. It is an Amazon-like storefront that takes in customer orders on various sporting goods and outdoor items through the Bamazon Customer Portal.',
   },
   {
     image: crystalImage,
@@ -355,7 +355,7 @@ export const projects: IProject[] = [
     technologies: ['Node'],
     type: 'web_development',
     description:
-      'LIRI is a command line node app that takes in parameters and gives you back tweets, songs, and movies.',
+      'A command line node app that takes in parameters and gives you back tweets, songs, and movies.',
   },
   {
     image: scraperImage,
@@ -376,7 +376,7 @@ export const projects: IProject[] = [
     ],
     type: 'web_development',
     description:
-      'An application that scrapes all the major news articles related to college basketball',
+      'An application that scrapes all the major news articles related to college basketball.',
   },
   {
     image: healthTrackerImage,
@@ -439,7 +439,7 @@ export const projects: IProject[] = [
     technologies: ['Node', 'JavaScript constructors'],
     type: 'web_development',
     description:
-      'A command line version of the classic Hangman game using JavaScript constructors.',
+      'A command line version of the classic Hangman game built using JavaScript constructors.',
   },
   {
     image: stadiumImage,

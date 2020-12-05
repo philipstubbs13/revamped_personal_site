@@ -99,7 +99,12 @@ export const Project = (props: IProps) => {
           <Collapse in={showTechnologies} timeout="auto" unmountOnExit>
             {technologies &&
               technologies.map((technology) => (
-                <Chip className={classes.chip} color="secondary" label={technology} />
+                <Chip
+                  className={classes.chip}
+                  key={technology}
+                  color="secondary"
+                  label={technology}
+                />
               ))}
           </Collapse>
         </CardContent>

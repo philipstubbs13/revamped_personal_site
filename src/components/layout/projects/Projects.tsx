@@ -9,6 +9,7 @@ import Select from '@material-ui/core/Select';
 import { Project } from '../../project/Project';
 import { projects, IProject } from '../../../data/projects';
 import { SwitchToggle } from '../../switch-toggle/SwitchToggle';
+import { projectWorkType } from '../../../constants/projectWorkType.enum';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -59,8 +60,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Projects = () => {
   const classes = useStyles();
-  const [showTechnologies, setShowTechnologies] = useState(false);
-  const [projectType, setProjectType] = useState('all');
+  const [showTechnologies, setShowTechnologies] = useState<boolean>(false);
+  const [projectType, setProjectType] = useState<projectWorkType>(projectWorkType.All);
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
   const handleChangeShowTechnologies = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,11 +69,11 @@ export const Projects = () => {
   };
 
   const handleChangeProjectType = (event: React.ChangeEvent<{ value: unknown }>) => {
-    const projectTypeSelected = event.target.value as string;
+    const projectTypeSelected = event.target.value;
     let filteredProjectsToDisplay = [...projects];
-    setProjectType(projectTypeSelected);
+    setProjectType(projectTypeSelected as projectWorkType);
 
-    if (projectTypeSelected === 'all') {
+    if (projectTypeSelected === projectWorkType.All) {
       setFilteredProjects(filteredProjectsToDisplay);
     } else {
       filteredProjectsToDisplay = filteredProjectsToDisplay.filter(
@@ -109,10 +110,10 @@ export const Projects = () => {
             className={classes.selectEmpty}
             variant="outlined"
           >
-            <MenuItem value="all">All Projects</MenuItem>
-            <MenuItem value="web_development">Web Development</MenuItem>
-            <MenuItem value="data">Data</MenuItem>
-            <MenuItem value="technical_writing">Technical Writing</MenuItem>
+            <MenuItem value={projectWorkType.All}>All Projects</MenuItem>
+            <MenuItem value={projectWorkType.WebDevelopment}>Web Development</MenuItem>
+            <MenuItem value={projectWorkType.Data}>Data</MenuItem>
+            <MenuItem value={projectWorkType.TechnicalWriting}>Technical Writing</MenuItem>
           </Select>
         </FormControl>
         <SwitchToggle
