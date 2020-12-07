@@ -113,7 +113,7 @@ export const Projects = () => {
             <MenuItem value={projectWorkType.All}>All Projects</MenuItem>
             <MenuItem value={projectWorkType.WebDevelopment}>Web Development</MenuItem>
             <MenuItem value={projectWorkType.Data}>Data</MenuItem>
-            <MenuItem value={projectWorkType.TechnicalWriting}>Technical Writing</MenuItem>
+            {/* <MenuItem value={projectWorkType.TechnicalWriting}>Technical Writing</MenuItem> */}
           </Select>
         </FormControl>
         <SwitchToggle
