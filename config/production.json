@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://phil:phil@cluster0.rovds.mongodb.net/personal_site?retryWrites=true&w=majority"
+}

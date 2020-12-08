@@ -8,6 +8,7 @@ import { Routes } from './components/routing/Routes';
 import { Navbar } from './components/navbar/Navbar';
 import { Footer } from './components/footer/Footer';
 import { SocialLinks } from './components/social-links/SocialLinks';
+import { GlobalProvider } from './context/GlobalState';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -38,19 +39,21 @@ export const App = () => {
   const classes = useStyles();
 
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <div className={classes.app}>
-          <Navbar />
-          <div className={classes.content}>
-            <Container maxWidth="md" className={classes.root}>
-              <Routes />
-            </Container>
+    <GlobalProvider>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <div className={classes.app}>
+            <Navbar />
+            <div className={classes.content}>
+              <Container maxWidth="md" className={classes.root}>
+                <Routes />
+              </Container>
+            </div>
+            <SocialLinks />
+            <Footer />
           </div>
-          <SocialLinks />
-          <Footer />
-        </div>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </GlobalProvider>
   );
 };

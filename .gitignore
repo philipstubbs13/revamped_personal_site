@@ -46,4 +46,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # database
-config/
+config/default.json
