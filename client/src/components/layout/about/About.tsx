@@ -18,16 +18,14 @@ const useStyles = makeStyles((theme: Theme) =>
     avatar: {
       width: 160,
       height: 160,
-      marginBottom: 30,
-      border: `4px solid ${theme.palette.secondary.main}`,
+      border: `4px solid ${theme.palette.primary.main}`,
     },
     bio: {
-      backgroundColor: theme.palette.secondary.dark,
-      border: `3px solid ${theme.palette.secondary.main}`,
-      color: theme.palette.text.secondary,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+      gap: theme.spacing(3),
+
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+      },
     },
   })
 );
@@ -37,16 +35,20 @@ export const About = () => {
 
   return (
     <div>
-      <Box p={5} className={classes.bio}>
-        <Avatar alt="Phil Stubbs" src={profileImage} className={classes.avatar} />
-        <Typography variant="h4" className={classes.title}>
-          Hello there, I&apos;m phil
-        </Typography>
-        <Box m={3} textAlign="center">
-          <Typography variant="subtitle1" className={classes.body}>
-            web development | technical writing | data engineering
+      <Box p={2} display="flex" alignItems="center" justifyContent="center" className={classes.bio}>
+        <div>
+          <Avatar alt="Phil Stubbs" src={profileImage} className={classes.avatar} />
+        </div>
+        <div>
+          <Typography variant="h4" className={classes.title}>
+            Hello there, I&apos;m phil
           </Typography>
-        </Box>
+          <Box marginTop={2} textAlign="center">
+            <Typography variant="subtitle1" className={classes.body}>
+              web development | technical writing | data engineering
+            </Typography>
+          </Box>
+        </div>
       </Box>
       <Box textAlign="center">
         <TimelineView timelineItems={experiences} />

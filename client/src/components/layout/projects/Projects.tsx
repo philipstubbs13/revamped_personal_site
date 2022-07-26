@@ -86,9 +86,14 @@ export const Projects = () => {
           projects
         </Typography>
       </Box>
-      <Box m={3} textAlign="center">
+      <Box marginTop={3} marginBottom={3}>
         <Typography>
-          From web development to data engineering, check out my latest projects
+          I am a web developer with experience building websites and web applications. I enjoy
+          working across the stack from front to back. I primarily use React, TypeScript, Python,
+          Node, HTML, CSS, and JavaScript. But, I am a motivated, self-starter who is passionate
+          about learning and investigating new, cutting-edge technologies. I also have a curiosity
+          towards data engineering. Specifically, I am interested in collecting, managing, and
+          transforming data into charts and other visualizations to tell stories.
         </Typography>
       </Box>
       <div className={classes.inputsContainer}>

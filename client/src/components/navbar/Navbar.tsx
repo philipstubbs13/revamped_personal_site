@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     navLink: {
       marginLeft: 20,
-      border: `1px solid ${theme.palette.primary.main}`,
       '&:hover': {
         color: theme.palette.text.secondary,
       },
@@ -108,26 +107,21 @@ export const Navbar = () => {
           <Link to="/" className={classes.title}>
             <Typography variant="h6">Phil Stubbs</Typography>
           </Link>
-          <Button className={classes.navLink} variant="contained" color="secondary" href="/">
+          <Button className={classes.navLink} variant="text" color="secondary" href="/">
             About
           </Button>
-          <Button
-            className={classes.navLink}
-            variant="contained"
-            color="secondary"
-            href="/projects"
-          >
+          <Button className={classes.navLink} variant="text" color="secondary" href="/projects">
             Projects
           </Button>
           <Button
             className={classes.navLink}
-            variant="contained"
+            variant="text"
             color="secondary"
             href="/technical-writing"
           >
             Technical Writing
           </Button>
-          <Button className={classes.navLink} variant="contained" color="secondary" href="/contact">
+          <Button className={classes.navLink} variant="text" color="secondary" href="/contact">
             Contact
           </Button>
         </Toolbar>

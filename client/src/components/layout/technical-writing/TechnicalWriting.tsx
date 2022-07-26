@@ -40,10 +40,10 @@ export const TechnicalWriting = () => {
       </Box>
       <Box m={3}>
         <Typography>
-          I have a diverse selection of technical writing projects in my portfolio. I’ve worked on
-          and published many types of technical documents, including install guides, user guides,
-          configuration guides, release notes, online help, reference material, and hardware. The
-          following samples are from several projects I worked on.
+          I have managed various technical documentation projects. Some of the types of technical
+          documents I helped build include install guides, user guides, configuration guides,
+          release notes, online help, and reference material. My experience includes software,
+          hardware, and medical writing primarily using the DITA data model.
         </Typography>
         <Box className={classes.projectsContainer}>
           <Box mt={5}>
