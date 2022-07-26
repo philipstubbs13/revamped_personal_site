@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      borderBottom: `4px solid ${theme.palette.secondary.main}`,
+      // borderBottom: `4px solid ${theme.palette.secondary.main}`,
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -84,7 +84,7 @@ export const Navbar = () => {
           <Link to={link.route} key={link.route} className={classes.drawerLink}>
             <ListItem button className={classes.listItem}>
               <ListItemIcon>
-                <i className={`fas fa-${link.icon}`} />
+                <i className={`${link.icon}`} />
               </ListItemIcon>
               <ListItemText primary={link.title} />
             </ListItem>
@@ -106,7 +106,7 @@ export const Navbar = () => {
             {list()}
           </Drawer>
           <Link to="/" className={classes.title}>
-            <Typography variant="h6">Phil J Stubbs</Typography>
+            <Typography variant="h6">Phil Stubbs</Typography>
           </Link>
           <Button className={classes.navLink} variant="contained" color="secondary" href="/">
             About
@@ -118,6 +118,14 @@ export const Navbar = () => {
             href="/projects"
           >
             Projects
+          </Button>
+          <Button
+            className={classes.navLink}
+            variant="contained"
+            color="secondary"
+            href="/technical-writing"
+          >
+            Technical Writing
           </Button>
           <Button className={classes.navLink} variant="contained" color="secondary" href="/contact">
             Contact

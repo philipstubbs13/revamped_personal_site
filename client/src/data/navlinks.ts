@@ -2,16 +2,21 @@ export const navlinks = [
   {
     title: 'About',
     route: '/',
-    icon: 'info-circle',
+    icon: 'fas fa-info-circle',
   },
   {
     title: 'Projects',
     route: '/projects',
-    icon: 'code',
+    icon: 'fas fa-code',
+  },
+  {
+    title: 'Technical Writing',
+    route: '/technical-writing',
+    icon: 'fa-solid fa-comment-pen',
   },
   {
     title: 'Contact',
     route: '/contact',
-    icon: 'envelope',
+    icon: 'fas fa-envelope',
   },
 ];

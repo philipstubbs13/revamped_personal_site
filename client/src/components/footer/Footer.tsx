@@ -29,7 +29,7 @@ export const Footer = () => {
   return (
     <div className={classes.root}>
       <Typography variant="h6" className={classes.copyrightText}>
-        Phil J Stubbs &copy; 2020
+        Phil Stubbs &copy; {new Date().getFullYear()}
       </Typography>
     </div>
   );

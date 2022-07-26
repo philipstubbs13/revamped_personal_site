@@ -6,6 +6,10 @@ export interface ISocial {
 
 export const social = [
   {
+    profileLink: 'https://www.instagram.com/philipstubbs13/',
+    platform: 'instagram',
+  },
+  {
     profileLink: 'https://www.tiktok.com/@thephilstubbs',
     platform: 'tiktok',
   },
