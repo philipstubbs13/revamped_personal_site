@@ -27,7 +27,7 @@ export const SocialLink = (props: IProps) => {
 
   return (
     <IconButton className={classes.socialButton} href={profileLink} target="_blank">
-      <i className={`fab fa-2x fa-${platform}`} />
+      <i className={`fab fa-1x fa-${platform}`} />
     </IconButton>
   );
 };

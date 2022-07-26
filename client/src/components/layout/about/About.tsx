@@ -1,7 +1,5 @@
-import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import profileImage from '../../../images/profile.jpg';
@@ -16,13 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     body: {
       lineHeight: 1.5,
-    },
-    projectsLink: {
-      color: theme.palette.secondary.main,
-      textDecoration: 'none',
-      '&:hover': {
-        color: theme.palette.text.primary,
-      },
     },
     avatar: {
       width: 160,
@@ -49,21 +40,11 @@ export const About = () => {
       <Box p={5} className={classes.bio}>
         <Avatar alt="Phil Stubbs" src={profileImage} className={classes.avatar} />
         <Typography variant="h4" className={classes.title}>
-          Hello, my name is Phil Stubbs.
+          Hello there, I&apos;m phil
         </Typography>
         <Box m={3} textAlign="center">
           <Typography variant="subtitle1" className={classes.body}>
-            I am a full stack web developer and data engineer.
-          </Typography>
-          <Typography variant="subtitle1" className={classes.body}>
-            I specialize in JavaScript, Python, and Technical Writing.
-          </Typography>
-          <Typography variant="subtitle1" className={classes.body}>
-            Feel free to take a look at my latest projects on the{' '}
-            <Link className={classes.projectsLink} to="/projects">
-              projects
-            </Link>{' '}
-            page.
+            web development | technical writing | data engineering
           </Typography>
         </Box>
       </Box>

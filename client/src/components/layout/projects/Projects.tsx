@@ -16,10 +16,6 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       fontWeight: 'bold',
     },
-    body: {
-      lineHeight: 2,
-      fontWeight: 'bold',
-    },
     projectsContainer: {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
@@ -91,9 +87,8 @@ export const Projects = () => {
         </Typography>
       </Box>
       <Box m={3} textAlign="center">
-        <Typography variant="h6">From full stack web development to data engineering...</Typography>
-        <Typography variant="h6" className={classes.body}>
-          Check out my latest projects
+        <Typography>
+          From web development to data engineering, check out my latest projects
         </Typography>
       </Box>
       <div className={classes.inputsContainer}>

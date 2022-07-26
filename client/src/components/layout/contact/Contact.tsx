@@ -31,11 +31,8 @@ export const Contact = () => {
         Get in touch
       </Typography>
       <Box m={3} textAlign="center">
-        <Typography variant="h6" className={classes.body}>
-          If you want to get in touch, talk to me about a project collaboration, or just say hi,
-        </Typography>
-        <Typography variant="h6" className={classes.body}>
-          fill out the awesome form below or send an email to philipstubbs13@gmail.com.
+        <Typography>
+          To get in touch, fill out the form below or send an email to philipstubbs13@gmail.com.
         </Typography>
       </Box>
       <Container maxWidth="sm">

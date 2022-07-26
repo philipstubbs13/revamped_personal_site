@@ -29,4 +29,8 @@ export const social = [
     profileLink: 'https://www.facebook.com/phil.stubbs.13/',
     platform: 'facebook',
   },
+  {
+    profileLink: 'https://www.youtube.com/channel/UCgUxeMdOxRnMIkJZrWYP0wQ',
+    platform: 'youtube',
+  },
 ];

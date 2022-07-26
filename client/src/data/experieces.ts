@@ -99,12 +99,12 @@ export const experiences: Experience[] = [
     title: 'Parallax',
     description: 'Software Engineer',
     start: '2019',
-    end: '',
+    end: '2022',
     avatar: parallax,
     details: [
-      'Write and style React components using Storybook to meet the requirements of the mocks, fulfill the user stories, and create a reusable, easy to maintain component library.',
-      'Follow the test driven development (TDD) process by writing unit tests with Jest, helping identify errors and problems quickly, reduce the time spent on rework, and increase the confidence and quality of the software application.',
-      'Help develop Node.js API endpoints on the backend of the application, which allow the frontend (React) to consume those endpoints and interact with the database (Cloud Firestore).',
+      'Diagnosed and resolved  customer issues in a timely manner as a member of the external rapid response team.',
+      'Built React components using Storybook and helped create a reusable, easy to maintain user interface component library.',
+      'Followed the test driven development (TDD) process by writing unit tests with Jest, which helped identify errors and problems quickly, reduce the time spent on rework, and increase the confidence and quality of the software application.',
     ],
   },
 ];
