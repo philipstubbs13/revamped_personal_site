@@ -147,7 +147,7 @@ export const TechnicalWriting = () => {
         </Box>
         <Box mt={5}>
           <Typography variant="h6">
-            <b>Release Notes</b>
+            <b>Release Notess</b>
           </Typography>
           <ul>
             <li className={classes.listItem}>
