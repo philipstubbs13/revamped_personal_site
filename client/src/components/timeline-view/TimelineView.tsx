@@ -28,7 +28,7 @@ export const TimelineView = (props: IProps) => {
         <Typography variant="h6" className={classes.bold}>
           Education and Experiences
         </Typography>
-        <Typography>Here is a timeline of where I have been and what I have done.</Typography>
+        <Typography>A timeline of where I have been and what I have been up to.</Typography>
       </Box>
       {timelineItems.map((timelineItem: Experience, index) => {
         return (

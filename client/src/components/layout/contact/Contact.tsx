@@ -32,7 +32,8 @@ export const Contact = () => {
       </Typography>
       <Box m={3} textAlign="center">
         <Typography>
-          To get in touch, fill out the form below or send an email to philipstubbs13@gmail.com.
+          To get in touch, fill out the form below or send an email to{' '}
+          <a href="mailto:philipstubbs13@gmail.com">philipstubbs13@gmail.com</a>.
         </Typography>
       </Box>
       <Container maxWidth="sm">

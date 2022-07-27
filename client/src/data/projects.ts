@@ -26,6 +26,8 @@ import mentalHealthImage from '../images/mental_health.png';
 import d3DataJournalismImage from '../images/d3_data_journalism.png';
 import tableauImage from '../images/tableau.png';
 import marsWebScrapingImage from '../images/mars_web_scraping.png';
+import personalBlogImage from '../images/personalBlog.png';
+import ghReleaseMonitorImage from '../images/gh_release_monitor.png';
 
 export interface IProject {
   key?: string;
@@ -92,6 +94,37 @@ export const projects: IProject[] = [
     type: 'data',
     description:
       'Using a public dataset powered by the YouTube API, this project uncovers  insights into trending videos for one of the largest search engines and one of the largest social media platforms.',
+  },
+  {
+    image: ghReleaseMonitorImage,
+    title: 'GitHub Release Monitor',
+    githubRepo: 'https://github.com/philipstubbs13/gh-release-monitor',
+    website: 'https://gh-release-monitor.vercel.app',
+    technologies: ['Next.js', 'Material UI', 'React', 'IndexedDB', 'GitHub API', 'TypeScript'],
+    type: 'web_development',
+    description:
+      'Never miss a release for your favorite GitHub organizations and repositories ever again.',
+  },
+  {
+    image: personalBlogImage,
+    title: 'The mind of phil',
+    githubRepo: 'https://github.com/philipstubbs13/next-netlify-blog',
+    website: 'https://the-mind-of-phil.vercel.app/',
+    technologies: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Next.js',
+      'Netlify',
+      'Halfmoon CSS',
+      'MongoDB',
+      'Material UI',
+      'Express',
+    ],
+    type: 'web_development',
+    description:
+      'A personal blog to share what is going on inside the mind of phil. Built and deployed using next and netlify.',
   },
   {
     image: d3DataJournalismImage,

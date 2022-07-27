@@ -12,7 +12,7 @@ export const navlinks = [
   {
     title: 'Technical Writing',
     route: '/technical-writing',
-    icon: 'fa-solid fa-comment-pen',
+    icon: 'fas fa-pen',
   },
   {
     title: 'Contact',

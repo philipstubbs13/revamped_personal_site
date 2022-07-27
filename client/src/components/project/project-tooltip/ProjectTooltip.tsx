@@ -39,7 +39,7 @@ export const ProjectTooltip = (props: IProps) => {
         </div>
       }
     >
-      <HelpOutline fontSize="small" color="secondary" />
+      <HelpOutline fontSize="small" color="primary" />
     </Tooltip>
   );
 };

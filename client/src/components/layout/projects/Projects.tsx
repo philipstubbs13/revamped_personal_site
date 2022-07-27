@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     projectsContainer: {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
+      justifyItems: 'center',
       [theme.breakpoints.down('md')]: {
         gridTemplateColumns: 'repeat(2, 1fr)',
       },
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+      },
     },
     formControl: {
       minWidth: 180,
@@ -113,7 +117,6 @@ export const Projects = () => {
             <MenuItem value={projectWorkType.All}>All Projects</MenuItem>
             <MenuItem value={projectWorkType.WebDevelopment}>Web Development</MenuItem>
             <MenuItem value={projectWorkType.Data}>Data</MenuItem>
-            {/* <MenuItem value={projectWorkType.TechnicalWriting}>Technical Writing</MenuItem> */}
           </Select>
         </FormControl>
         <SwitchToggle
@@ -123,9 +126,6 @@ export const Projects = () => {
           label="Show Technologies"
         />
       </div>
-      {/* {Object.values(TechStack).map((tech) => {
-        return <Chip className={classes.chip} label={tech} onClick={() => {}} variant="outlined" />;
-      })} */}
       <div className={classes.projectsContainer}>
         {filteredProjects.map((project: IProject) => {
           return (

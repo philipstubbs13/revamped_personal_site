@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Collapse from '@material-ui/core/Collapse';
+import { Box } from '@material-ui/core';
 import { ProjectTooltip } from './project-tooltip/ProjectTooltip';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -35,6 +36,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     links: {
       marginBottom: 20,
+      display: 'flex',
+      gap: theme.spacing(2),
     },
     expand: {
       transform: 'rotate(0deg)',
@@ -48,6 +51,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontSize: 20,
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
     },
   })
 );
@@ -72,7 +78,7 @@ export const Project = (props: IProps) => {
         <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>
           <Typography gutterBottom className={classes.title}>
-            {title} <ProjectTooltip title={title} description={description} />
+            <span>{title}</span> <ProjectTooltip title={title} description={description} />
           </Typography>
           <div className={classes.links}>
             <IconButton
@@ -82,7 +88,7 @@ export const Project = (props: IProps) => {
               href={githubRepo}
               target="_blank"
             >
-              <i className="fab fa-2x fa-github" />
+              <i className="fab fa-1x fa-github" /> <Box marginLeft={0.5}>GitHub</Box>
             </IconButton>
             {website && (
               <IconButton
@@ -92,7 +98,7 @@ export const Project = (props: IProps) => {
                 href={website}
                 target="_blank"
               >
-                <i className="fas fa-2x fa-globe" />
+                <i className="fas fa-1x fa-globe" /> <Box marginLeft={0.5}>Live</Box>
               </IconButton>
             )}
           </div>

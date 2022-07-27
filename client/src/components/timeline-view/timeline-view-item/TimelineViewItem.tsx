@@ -24,8 +24,18 @@ const useStyles = makeStyles((theme: Theme) => ({
   bold: {
     fontWeight: 'bold',
   },
-  muted: {
+  description: {
     opacity: 0.5,
+    textAlign: 'center',
+  },
+  titleAndTooltip: {
+    display: 'flex',
+    gap: '5px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dateRange: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -42,7 +52,7 @@ export const TimelineViewItem = (props: IProps) => {
   return (
     <TimelineItem>
       <TimelineOppositeContent>
-        <Typography variant="body2">
+        <Typography variant="body2" className={classes.dateRange}>
           {start} - {end || 'Present'}
         </Typography>
       </TimelineOppositeContent>
@@ -54,12 +64,12 @@ export const TimelineViewItem = (props: IProps) => {
       </TimelineSeparator>
       <TimelineContent>
         <Paper elevation={3} className={classes.paper}>
-          <Typography variant="subtitle1" className={classes.bold}>
-            {title}{' '}
+          <Typography variant="subtitle1" className={classes.titleAndTooltip}>
+            <span>{title}</span>
             <TimelineViewTooltip title={title} description={description} details={details} />
           </Typography>
           {description && (
-            <Typography variant="body2" className={classes.muted}>
+            <Typography variant="body2" className={classes.description}>
               {description}
             </Typography>
           )}
